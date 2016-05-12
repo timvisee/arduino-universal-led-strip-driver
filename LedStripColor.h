@@ -91,6 +91,11 @@ public:
     LedStripColor(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
 
     /**
+     * Deconstructor.
+     */
+    ~LedStripColor();
+
+    /**
      * Constructor helper for combined color channels.
      *
      * @param combined Combined color channels.

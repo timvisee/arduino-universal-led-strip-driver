@@ -60,6 +60,11 @@ public:
     LedStrip(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
 
     /**
+     * Deconstructor.
+     */
+    ~LedStrip();
+
+    /**
      * Get the Arduino pin used for the data signal.
      *
      * @return Data pin.

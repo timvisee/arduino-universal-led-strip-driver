@@ -46,6 +46,11 @@ public:
      */
     LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
 
+    /**
+     * Deconstructor.
+     */
+    ~LedStripAdapterLPD8806();
+
     // Override virtual method in BaseLedStripAdapter class
     LedStripColor getLedColor(uint8_t ledIndex);
 

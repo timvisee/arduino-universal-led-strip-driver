@@ -67,6 +67,11 @@ protected:
 
 public:
     /**
+     * Deconstructor.
+     */
+    ~BaseLedStrip();
+
+    /**
      * Get the number of LEDs this LED strip has.
      *
      * @return LED count.

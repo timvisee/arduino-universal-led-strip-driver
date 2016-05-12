@@ -31,6 +31,12 @@ BaseLedStrip::BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter adapter) {
     this->adapter = adapter;
 }
 
+BaseLedStrip::~BaseLedStrip() {
+    // Explicitly delete all fields
+    delete this->ledCount;
+    delete this->adapter;
+}
+
 uint8_t BaseLedStrip::getLedCount() {
     return this->ledCount;
 }

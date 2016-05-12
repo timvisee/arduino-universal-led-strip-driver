@@ -31,6 +31,12 @@ LedStrip::LedStrip(uint8_t ledCount, uint8_t pinData, uint8_t pinClock) : BaseLe
     this->setAdapter(LedStripAdapterLPD8806(ledCount, pinData, pinClock));
 }
 
+LedStrip::~LedStrip() {
+    // Explicitly delete all fields
+    delete this->pinData;
+    delete this->pinClock;
+}
+
 uint8_t LedStrip::getDataPin() {
     return this->pinData;
 }
