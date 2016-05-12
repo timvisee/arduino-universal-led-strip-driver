@@ -29,6 +29,15 @@
 class BaseLedStripAdapter {
 public:
     /**
+     * Get the color of the given LED on the strip.
+     *
+     * @param ledIndex Index of the LED to configure.
+     *
+     * @return LED color.
+     */
+    virtual LedStripColor getLedColor(uint8_t ledIndex);
+
+    /**
      * Set the color of the given LED on the strip.
      *
      * @param ledIndex Index of the LED to configure.
@@ -73,6 +82,14 @@ public:
      * @param alphaChannel Color value of the alpha channel (fourth channel).
      */
     virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
+
+    /**
+     * Get the color of the given LED on the strip.
+     * The color channels are combined for this method.
+     *
+     * @return Combined color channels.
+     */
+    virtual uint32_t getLedColorCombinedChannels(uint8_t ledIndex);
 
     /**
      * Set the color of the given LED on the strip.
