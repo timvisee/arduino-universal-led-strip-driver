@@ -21,3 +21,20 @@
  ******************************************************************************/
 
 #include "BaseLedStripAdapter.h"
+
+bool BaseLedStripAdapter::hasRedChannelSupport() {
+    return this->getColorChannelCount() >= 1;
+}
+
+bool BaseLedStripAdapter::hasGreenChannelSupport() {
+    return this->getColorChannelCount() >= 2;
+}
+
+bool BaseLedStripAdapter::hasBlueChannelSupport() {
+    return this->getColorChannelCount() >= 3;
+}
+
+bool BaseLedStripAdapter::hasAlphaChannelSupport() {
+    return this->getColorChannelCount() >= 4;
+}
+

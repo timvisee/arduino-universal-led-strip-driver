@@ -64,12 +64,12 @@ public:
     /**
      * Get the number of color channels this LED strip has.
      */
-    static uint8_t getColorChannelCount();
+    uint8_t getColorChannelCount();
 
     /**
      * Get the maximum color value for each color channel on this LED strip.
      */
-    static uint8_t getColorValueMax();
+    uint8_t getColorValueMax();
 };
 
 #endif // LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H

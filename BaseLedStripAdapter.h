@@ -73,6 +73,44 @@ public:
      * @param combinedColorValue Color value.
      */
     virtual void setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue);
+
+    /**
+     * Get the number of color channels this LED strip has.
+     */
+    virtual uint8_t getColorChannelCount();
+
+    /**
+     * Get the maximum color value for each color channel on this LED strip.
+     */
+    virtual uint8_t getColorValueMax();
+
+    /**
+     * Check whether this LED strip has support for the red color channel.
+     *
+     * @return True if this LED strip has support, false if not.
+     */
+    bool hasRedChannelSupport();
+
+    /**
+     * Check whether this LED strip has support for the green color channel.
+     *
+     * @return True if this LED strip has support, false if not.
+     */
+    bool hasGreenChannelSupport();
+
+    /**
+     * Check whether this LED strip has support for the blue color channel.
+     *
+     * @return True if this LED strip has support, false if not.
+     */
+    bool hasBlueChannelSupport();
+
+    /**
+     * Check whether this LED strip has support for the alpha channel.
+     *
+     * @return True if this LED strip has support, false if not.
+     */
+    bool hasAlphaChannelSupport();
 };
 
 #endif // LEDSTRIPCONTROLLER_BASELEDSTRIPADAPTER_H
