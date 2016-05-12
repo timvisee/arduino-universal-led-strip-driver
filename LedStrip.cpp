@@ -28,7 +28,7 @@ LedStrip::LedStrip(uint8_t ledCount, uint8_t pinData, uint8_t pinClock) : BaseLe
     this->pinClock = pinClock;
 
     // Configure and set the adapter
-    this->setAdapter(LedStripAdapterLPD8806(ledCount, pinData, pinClock));
+    this->setAdapter(new LedStripAdapterLPD8806(ledCount, pinData, pinClock));
 }
 
 LedStrip::~LedStrip() {
@@ -46,9 +46,9 @@ uint8_t LedStrip::getClockPin() {
 }
 
 void LedStrip::init() {
-    this->getAdapter().init();
+    (*this->getAdapter()).init();
 }
 
 void LedStrip::render() {
-    this->getAdapter().render();
+    (*this->getAdapter()).render();
 }
