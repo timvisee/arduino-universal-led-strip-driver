@@ -85,6 +85,9 @@ public:
     void init();
 
     // Override virtual method in BaseLedStrip class
+    void init(bool render);
+
+    // Override virtual method in BaseLedStrip class
     void render();
 };
 

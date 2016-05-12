@@ -37,6 +37,15 @@ void LedStripAdapterLPD8806::init() {
     this->strip.begin();
 }
 
+void LedStripAdapterLPD8806::init(bool render) {
+    // Initialize/begin the LED strip
+    this->strip.begin();
+
+    // Render the LED strip
+    if(render)
+        this->render();
+}
+
 void LedStripAdapterLPD8806::render() {
     // Render the LED strip
     this->strip.show();

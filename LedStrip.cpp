@@ -49,6 +49,10 @@ void LedStrip::init() {
     (*this->getAdapter()).init();
 }
 
+void LedStrip::init(bool render) {
+    (*this->getAdapter()).init(render);
+}
+
 void LedStrip::render() {
     (*this->getAdapter()).render();
 }

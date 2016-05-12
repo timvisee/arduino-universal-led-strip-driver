@@ -31,8 +31,17 @@ public:
     /**
      * Initialize the LED strip.
      * Required before it's used.
+     * This will automatically render the LED strip state once after initialization.
      */
     virtual void init() = 0;
+
+    /**
+     * Initialize the LED strip.
+     * Required before it's used.
+     *
+     * @param render True to automatically render once after initialization, false if not.
+     */
+    virtual void init(bool render) = 0;
 
     /**
      * Render the state of the LED strip to the physical hardware.

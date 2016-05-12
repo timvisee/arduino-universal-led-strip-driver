@@ -56,6 +56,9 @@ public:
     void init();
 
     // Override virtual method in BaseLedStripAdapter class
+    void init(bool render);
+
+    // Override virtual method in BaseLedStripAdapter class
     void render();
 
     // Override virtual method in BaseLedStripAdapter class
