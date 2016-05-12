@@ -27,17 +27,36 @@ LedStripAdapterLPD8806::LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData
     strip = LPD8806(ledCount, pinData, pinClock);
 }
 
+LedStripColor LedStripAdapterLPD8806::getLedColor(uint8_t ledIndex) {
+    return LedStripColor::fromCombinedChannels(this->getLedColorCombinedChannels(ledIndex));
+}
+
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, LedStripColor color) {
     // Decapsulate the Color object, and set the LEDs color
     this->setLedColor(ledIndex, color.getCombinedChannels());
 }
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, uint8_t redChannel) {
-    // TODO: Only set the first channel!
+    // Get the color of the LED
+    LedStripColor ledColor = this->getLedColor(ledIndex);
+
+    // Set the red channel
+    ledColor.setRed(redChannel);
+
+    // Update the led color
+    this->setLedColor(ledIndex, ledColor);
 }
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel) {
-    // TODO: Only set the first two channels!
+    // Get the color of the LED
+    LedStripColor ledColor = this->getLedColor(ledIndex);
+
+    // Set the red and green channel
+    ledColor.setRed(redChannel);
+    ledColor.setGreen(greenChannel);
+
+    // Update the led color
+    this->setLedColor(ledIndex, ledColor);
 }
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex,
@@ -52,8 +71,23 @@ void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex,
     this->setLedColor(ledIndex, redChannel, greenChannel, blueChannel);
 }
 
+uint32_t LedStripAdapterLPD8806::getLedColorCombinedChannels(uint8_t ledIndex) {
+    // Get the raw color value
+    uint32_t rawColor = this->strip.getPixelColor(ledIndex);
+
+    // Translate the color to the LED strip color space, and return
+    return ((uint32_t) (rawColor & (((uint32_t) 0xFF) << 8)) <<  8) |
+           ((uint32_t) (rawColor & (((uint32_t) 0xFF) << 16)) << 16) |
+           (uint32_t) (rawColor & (((uint32_t) 0xFF) << 0));
+}
+
 void LedStripAdapterLPD8806::setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue) {
-    this->strip.setPixelColor(ledIndex, combinedColorValue);
+    // Translate and set the LED strip color to the hardware color
+    this->strip.setPixelColor(ledIndex,
+            ((uint32_t) ((combinedColorValue & (((uint32_t) 0xFF) << 24)) | 0x80) <<  8) |
+                    ((uint32_t) ((combinedColorValue & (((uint32_t) 0xFF) << 16)) | 0x80) << 16) |
+                    (uint32_t) ((combinedColorValue & (((uint32_t) 0xFF) << 8)) | 0x80)
+    );
 }
 
 uint8_t LedStripAdapterLPD8806::getColorChannelCount() {
