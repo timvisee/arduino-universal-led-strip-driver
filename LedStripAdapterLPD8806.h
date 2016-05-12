@@ -24,6 +24,7 @@
 #define LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H
 
 #include "LPD8806.h"
+#include "LedStripColor.h"
 #include "BaseLedStripAdapter.h"
 
 #define LPD8806_COLOR_CHANNEL_COUNT 3
