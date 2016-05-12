@@ -91,10 +91,10 @@ void LedStripColor::setAlpha(uint8_t alphaChannel) {
 
 uint32_t LedStripColor::getCombinedChannels() {
     // Determine the combined color channels value based on the color channels
-    return ((uint32_t) (this->redChannel | 0xFF) << 24) |
-           ((uint32_t) (this->greenChannel | 0xFF) << 16) |
-           ((uint32_t) (this->blueChannel | 0xFF) <<  8) |
-           (uint32_t) (this->blueChannel | 0xFF);
+    return ((uint32_t) (this->redChannel & 0xFF) << 24) |
+           ((uint32_t) (this->greenChannel & 0xFF) << 16) |
+           ((uint32_t) (this->blueChannel & 0xFF) << 8) |
+           (uint32_t) (this->blueChannel & 0xFF);
 }
 
 uint32_t LedStripColor::setCombinedChannels(uint32_t combined) {
