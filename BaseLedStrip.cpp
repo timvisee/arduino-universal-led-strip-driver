@@ -37,10 +37,6 @@ BaseLedStrip::~BaseLedStrip() {
 //    delete &this->adapter;
 }
 
-void BaseLedStrip::init() { }
-
-void BaseLedStrip::render() { }
-
 uint8_t BaseLedStrip::getLedCount() {
     return this->ledCount;
 }
