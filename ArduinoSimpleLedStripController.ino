@@ -23,6 +23,7 @@
 #include <Arduino.h>
 
 #include "LedStrip.h"
+#include "LedStripColor.h"
 
 /**
  * Number of LEDs on the LED strip.
@@ -47,9 +48,19 @@ LedStrip strip = LedStrip(LED_STRIP_LED_COUNT, LED_STRIP_PIN_DATA, LED_STRIP_PIN
 /**
  * Called on start.
  */
-void setup() { }
+void setup() {
+    // Initialize the LED Strip
+    // TODO: Automatically render!
+    strip.init();
+}
 
 /**
  * Called once each loop/update.
  */
-void loop() { }
+void loop() {
+    // Set the color of the given LED
+    strip.setLedColor(1, LedStripColor(100, 100, 100));
+
+    // Render the LED strip
+    strip.render();
+}
