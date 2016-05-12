@@ -1,0 +1,101 @@
+##############################################################################
+# Copyright (c) DynAmbi-Firmware 2016. All rights reserved.                  #
+#                                                                            #
+# @author Tim Visee                                                          #
+# @website http://timvisee.com/                                              #
+#                                                                            #
+# Open Source != No Copyright                                                #
+#                                                                            #
+# Permission is hereby granted, free of charge, to any person obtaining a    #
+# copy of this software and associated documentation files (the "Software"), #
+# to deal in the Software without restriction, including without limitation  #
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,   #
+# and/or sell copies of the Software, and to permit persons to whom the      #
+# Software is furnished to do so, subject to the following conditions:       #
+#                                                                            #
+# The above copyright notice and this permission notice shall be included    #
+# in all copies or substantial portions of the Software.                     #
+#                                                                            #
+# You should have received a copy of The MIT License (MIT) along with this   #
+# program. If not, see <http://opensource.org/licenses/MIT/>.                #
+##############################################################################
+
+### C template
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+### C++ template
+# Compiled Object files
+*.slo
+
+# Precompiled Headers
+
+# Compiled Dynamic libraries
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+
+
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+# Ignore project files
+*.iml
+
+# Ignore IDEA directory
+.idea/*
+
+# File-based project format:
+*.ipr
+*.iws
+
+### Plugin-specific files: ###
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+
+### Git ###
+# Don't exclude the .gitignore itself
+!.gitignore
