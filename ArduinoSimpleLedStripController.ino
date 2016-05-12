@@ -50,8 +50,7 @@ LedStrip strip = LedStrip(LED_STRIP_LED_COUNT, LED_STRIP_PIN_DATA, LED_STRIP_PIN
  */
 void setup() {
     // Initialize the LED Strip
-    // TODO: Automatically render!
-    strip.init();
+    strip.init(true);
 }
 
 /**
@@ -59,7 +58,7 @@ void setup() {
  */
 void loop() {
     // Set the color of the given LED
-    strip.setLedColor(1, LedStripColor(100, 100, 100));
+    strip.setLedColor(1, LedStripColor(127, 127, 0));
 
     // Render the LED strip
     strip.render();
