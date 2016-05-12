@@ -32,10 +32,6 @@ LedStripAdapterLPD8806::~LedStripAdapterLPD8806() {
 //    delete &this->strip;
 }
 
-LedStripColor LedStripAdapterLPD8806::getLedColor(uint8_t ledIndex) {
-    return LedStripColor::fromCombinedChannels(this->getLedColorCombinedChannels(ledIndex));
-}
-
 void LedStripAdapterLPD8806::init() {
     // Initialize/begin the LED strip
     this->strip.begin();
@@ -44,6 +40,10 @@ void LedStripAdapterLPD8806::init() {
 void LedStripAdapterLPD8806::render() {
     // Render the LED strip
     this->strip.show();
+}
+
+LedStripColor LedStripAdapterLPD8806::getLedColor(uint8_t ledIndex) {
+    return LedStripColor::fromCombinedChannels(this->getLedColorCombinedChannels(ledIndex));
 }
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, LedStripColor color) {
@@ -91,18 +91,18 @@ uint32_t LedStripAdapterLPD8806::getLedColorCombinedChannels(uint8_t ledIndex) {
     uint32_t rawColor = this->strip.getPixelColor(ledIndex);
 
     // Translate the color to the LED strip color space, and return
-    return ((uint32_t) ((rawColor & ((uint32_t) 0xFF) << 8)) <<  24) |
-           ((uint32_t) ((rawColor & ((uint32_t) 0xFF) << 16)) << 16) |
-           ((uint32_t) ((rawColor & ((uint32_t) 0xFF) << 0)) << 8) |
+    return ((uint32_t) (rawColor & (uint32_t) 0xFF << 8)<<  24) |
+           ((uint32_t) (rawColor & (uint32_t) 0xFF << 16) << 16) |
+           ((uint32_t) (rawColor & (uint32_t) 0xFF << 0) << 8) |
            LED_STRIP_COLOR_VALUE_MAX & 0xFF;
 }
 
 void LedStripAdapterLPD8806::setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue) {
     // Translate and set the LED strip color to the hardware color
     this->strip.setPixelColor(ledIndex,
-            ((uint32_t) ((combinedColorValue & (((uint32_t) 0xFF) << 24)) | 0x80) <<  8) |
-            ((uint32_t) ((combinedColorValue & (((uint32_t) 0xFF) << 16)) | 0x80) << 16) |
-            (uint32_t) ((combinedColorValue & (((uint32_t) 0xFF) << 8)) | 0x80)
+            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 24) >> 24) | 0x80) << 8 |
+            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 16) >> 16) | 0x80) << 16 |
+            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 8) >> 8) | 0x80) << 0
     );
 }
 
