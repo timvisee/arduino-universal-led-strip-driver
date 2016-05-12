@@ -29,7 +29,7 @@ LedStripAdapterLPD8806::LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData
 
 LedStripAdapterLPD8806::~LedStripAdapterLPD8806() {
     // Explicitly delete the strip field
-    delete this->strip;
+    delete &this->strip;
 }
 
 LedStripColor LedStripAdapterLPD8806::getLedColor(uint8_t ledIndex) {

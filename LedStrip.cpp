@@ -33,8 +33,8 @@ LedStrip::LedStrip(uint8_t ledCount, uint8_t pinData, uint8_t pinClock) : BaseLe
 
 LedStrip::~LedStrip() {
     // Explicitly delete all fields
-    delete this->pinData;
-    delete this->pinClock;
+    delete &this->pinData;
+    delete &this->pinClock;
 }
 
 uint8_t LedStrip::getDataPin() {
