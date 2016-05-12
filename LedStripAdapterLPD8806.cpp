@@ -27,6 +27,11 @@ LedStripAdapterLPD8806::LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData
     strip = LPD8806(ledCount, pinData, pinClock);
 }
 
+void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, LedStripColor color) {
+    // Decapsulate the Color object, and set the LEDs color
+    this->setLedColor(ledIndex, color.getCombinedChannels());
+}
+
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, uint8_t redChannel) {
     // TODO: Only set the first channel!
 }

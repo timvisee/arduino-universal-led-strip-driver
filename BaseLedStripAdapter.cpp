@@ -37,4 +37,3 @@ bool BaseLedStripAdapter::hasBlueChannelSupport() {
 bool BaseLedStripAdapter::hasAlphaChannelSupport() {
     return this->getColorChannelCount() >= 4;
 }
-

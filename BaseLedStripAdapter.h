@@ -24,9 +24,18 @@
 #define LEDSTRIPCONTROLLER_BASELEDSTRIPADAPTER_H
 
 #include "LPD8806.h"
+#include "LedStripColor.h"
 
 class BaseLedStripAdapter {
 public:
+    /**
+     * Set the color of the given LED on the strip.
+     *
+     * @param ledIndex Index of the LED to configure.
+     * @param color LED color.
+     */
+    virtual void setLedColor(uint8_t ledIndex, LedStripColor color);
+
     /**
      * Set the color using one color channel of the given LED on the strip.
      *

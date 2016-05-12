@@ -47,6 +47,9 @@ public:
     LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
 
     // Override virtual method in BaseLedStripAdapter class
+    void setLedColor(uint8_t ledIndex, LedStripColor color);
+
+    // Override virtual method in BaseLedStripAdapter class
     void setLedColor(uint8_t ledIndex, uint8_t redChannel);
 
     // Override virtual method in BaseLedStripAdapter class
@@ -61,14 +64,10 @@ public:
     // Override virtual method in BaseLedStripAdapter class
     void setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue);
 
-    /**
-     * Get the number of color channels this LED strip has.
-     */
+    // Override virtual method in BaseLedStripAdapter class
     uint8_t getColorChannelCount();
 
-    /**
-     * Get the maximum color value for each color channel on this LED strip.
-     */
+    // Override virtual method in BaseLedStripAdapter class
     uint8_t getColorValueMax();
 };
 
