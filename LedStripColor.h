@@ -91,6 +91,13 @@ public:
     LedStripColor(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
 
     /**
+     * Constructor helper for combined color channels.
+     *
+     * @param combined Combined color channels.
+     */
+    static LedStripColor fromCombinedChannels(uint32_t combined);
+
+    /**
      * Get the red channel intensity.
      *
      * @return Channel intensity.

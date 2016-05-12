@@ -39,6 +39,17 @@ LedStripColor::LedStripColor(uint8_t redChannel, uint8_t greenChannel, uint8_t b
     this->alphaChannel = alphaChannel;
 }
 
+LedStripColor LedStripColor::fromCombinedChannels(uint32_t combined) {
+    // Construct a LedStripColor object
+    LedStripColor color = LedStripColor();
+
+    // Set the combined values
+    color.setCombinedChannels(combined);
+
+    // Return the object
+    return color;
+}
+
 uint8_t LedStripColor::getRed() {
     return this->redChannel;
 }
