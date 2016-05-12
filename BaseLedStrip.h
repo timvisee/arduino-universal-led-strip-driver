@@ -66,7 +66,7 @@ protected:
     BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter adapter);
 
     /**
-     * Deconstructor.
+     * Destructor.
      */
     ~BaseLedStrip();
 

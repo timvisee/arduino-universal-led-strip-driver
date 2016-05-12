@@ -60,7 +60,7 @@ public:
     LedStrip(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
 
     /**
-     * Deconstructor.
+     * Destructor.
      */
     ~LedStrip();
 

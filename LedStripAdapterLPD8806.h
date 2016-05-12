@@ -48,7 +48,7 @@ public:
     LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
 
     /**
-     * Deconstructor.
+     * Destructor.
      */
     ~LedStripAdapterLPD8806();
 
