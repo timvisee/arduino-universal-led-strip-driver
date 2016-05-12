@@ -109,9 +109,9 @@ uint32_t LedStripAdapterLPD8806::getLedColorCombinedChannels(uint8_t ledIndex) {
 void LedStripAdapterLPD8806::setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue) {
     // Translate and set the LED strip color to the hardware color
     this->strip.setPixelColor(ledIndex,
-            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 24) >> 24) | 0x80) << 8 |
-            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 16) >> 16) | 0x80) << 16 |
-            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 8) >> 8) | 0x80) << 0
+            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 24) / 2 >> 24) | 0x80) << 8 |
+            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 16) / 2 >> 16) | 0x80) << 16 |
+            ((uint32_t) ((combinedColorValue & (uint32_t) 0xFF << 8) / 2 >> 8) | 0x80) << 0
     );
 }
 

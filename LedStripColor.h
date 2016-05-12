@@ -25,7 +25,7 @@
 
 #include "Arduino.h"
 
-#define LED_STRIP_COLOR_VALUE_MAX 127
+#define LED_STRIP_COLOR_VALUE_MAX 255
 
 class LedStripColor {
 private:
