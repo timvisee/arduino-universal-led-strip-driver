@@ -22,8 +22,7 @@
 
 #include <Arduino.h>
 
-#include "LedStrip.h"
-#include "LedStripColor.h"
+#include "LedStripController.h"
 
 /**
  * Number of LEDs on the LED strip.

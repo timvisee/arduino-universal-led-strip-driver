@@ -23,6 +23,7 @@
 #ifndef LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
 #define LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
 
-class LedStripController { };
+#include "LedStrip.h"
+#include "LedStripColor.h"
 
 #endif // LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
