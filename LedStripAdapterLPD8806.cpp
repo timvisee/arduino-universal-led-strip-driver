@@ -26,3 +26,11 @@ LedStripAdapterLPD8806::LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData
     // Initialize the LED strip
     strip = LPD8806(ledCount, pinData, pinClock);
 }
+
+uint8_t LedStripAdapterLPD8806::getColorChannelCount() {
+    return LPD8806_COLOR_CHANNEL_COUNT;
+}
+
+uint8_t LedStripAdapterLPD8806::getColorValueMax() {
+    return LPD8806_COLOR_VALUE_MAX;
+}

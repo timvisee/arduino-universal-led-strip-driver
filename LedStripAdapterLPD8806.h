@@ -26,6 +26,9 @@
 #include "LPD8806.h"
 #include "BaseLedStripAdapter.h"
 
+#define LPD8806_COLOR_CHANNEL_COUNT 3
+#define LPD8806_COLOR_VALUE_MAX 127
+
 class LedStripAdapterLPD8806 : public BaseLedStripAdapter {
 private:
     /**
@@ -42,6 +45,16 @@ public:
      * @param pinClock Clock pin.
      */
     LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
+
+    /**
+     * Get the number of color channels this LED strip has.
+     */
+    static uint8_t getColorChannelCount();
+
+    /**
+     * Get the maximum color value for each color channel on this LED strip.
+     */
+    static uint8_t getColorValueMax();
 };
 
 #endif // LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H
