@@ -109,14 +109,14 @@ public:
      *
      * @return Combined color channel values.
      */
-    uint32_t getCombined();
+    uint32_t getCombinedChannels();
 
     /**
      * Get the combined color channel values.
      *
      * @param combined Combined color channel values.
      */
-    uint32_t setCombined(uint32_t combined);
+    uint32_t setCombinedChannels(uint32_t combined);
 };
 
 #endif // LEDSTRIPCONTROLLER_LEDSTRIPCOLOR_H
