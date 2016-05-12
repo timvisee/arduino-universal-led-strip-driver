@@ -42,3 +42,24 @@ BaseLedStripAdapter BaseLedStrip::getAdapter() {
 void BaseLedStrip::setAdapter(BaseLedStripAdapter adapter) {
     this->adapter = adapter;
 }
+
+void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel) {
+    this->adapter.setLedColor(ledIndex, redChannel);
+}
+
+void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel) {
+    this->adapter.setLedColor(ledIndex, redChannel, greenChannel);
+}
+
+void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
+    this->adapter.setLedColor(ledIndex, redChannel, greenChannel, blueChannel);
+}
+
+void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
+                               uint8_t alphaChannel) {
+    this->adapter.setLedColor(ledIndex, redChannel, greenChannel, blueChannel, alphaChannel);
+}
+
+void BaseLedStrip::setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue) {
+    this->adapter.setLedColor(ledIndex, combinedColorValue);
+}
