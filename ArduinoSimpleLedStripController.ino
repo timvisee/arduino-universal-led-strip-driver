@@ -22,6 +22,28 @@
 
 #include <Arduino.h>
 
+#include "LedStrip.h"
+
+/**
+ * Number of LEDs on the LED strip.
+ */
+const uint8_t LED_STRIP_LED_COUNT = 62;
+
+/**
+ * Data pin used for the LED strip.
+ */
+const uint8_t LED_STRIP_PIN_DATA = 2;
+
+/**
+ * Clock pin used for the LED strip.
+ */
+const uint8_t LED_STRIP_PIN_CLOCK = 3;
+
+/**
+ * LED strip instance.
+ */
+LedStrip strip = LedStrip(LED_STRIP_LED_COUNT, LED_STRIP_PIN_DATA, LED_STRIP_PIN_CLOCK);
+
 /**
  * Called on start.
  */
