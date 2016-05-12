@@ -65,12 +65,12 @@ protected:
      */
     BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter adapter);
 
-public:
     /**
      * Deconstructor.
      */
     ~BaseLedStrip();
 
+public:
     /**
      * Get the number of LEDs this LED strip has.
      *
