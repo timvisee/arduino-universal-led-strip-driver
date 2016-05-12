@@ -22,6 +22,14 @@
 
 #include "BaseLedStripAdapter.h"
 
+void BaseLedStripAdapter::init() { }
+
+void BaseLedStripAdapter::render() { }
+
+LedStripColor BaseLedStripAdapter::getLedColor(uint8_t ledIndex) {
+    return LedStripColor();
+}
+
 void BaseLedStripAdapter::setLedColor(uint8_t ledIndex, LedStripColor color) { }
 
 void BaseLedStripAdapter::setLedColor(uint8_t ledIndex, uint8_t redChannel) { }
@@ -62,8 +70,4 @@ bool BaseLedStripAdapter::hasBlueChannelSupport() {
 
 bool BaseLedStripAdapter::hasAlphaChannelSupport() {
     return this->getColorChannelCount() >= 4;
-}
-
-LedStripColor BaseLedStripAdapter::getLedColor(uint8_t ledIndex) {
-    return LedStripColor();
 }

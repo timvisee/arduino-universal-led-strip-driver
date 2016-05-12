@@ -44,3 +44,11 @@ uint8_t LedStrip::getDataPin() {
 uint8_t LedStrip::getClockPin() {
     return this->pinClock;
 }
+
+void LedStrip::init() {
+    this->getAdapter().init();
+}
+
+void LedStrip::render() {
+    this->getAdapter().render();
+}

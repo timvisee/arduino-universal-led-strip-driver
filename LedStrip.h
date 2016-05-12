@@ -80,6 +80,12 @@ public:
      * @return Clock pin.
      */
     uint8_t getClockPin();
+
+    // Override virtual method in BaseLedStrip class
+    void init();
+
+    // Override virtual method in BaseLedStrip class
+    void render();
 };
 
 #endif // LEDSTRIPCONTROLLER_LEDSTRIP_H

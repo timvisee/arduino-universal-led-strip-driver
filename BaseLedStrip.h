@@ -72,6 +72,17 @@ protected:
 
 public:
     /**
+     * Initialize the LED strip adapter.
+     * Required before the LED strip is used.
+     */
+    virtual void init();
+
+    /**
+     * Render the state of the LED strip to the physical hardware.
+     */
+    virtual void render();
+
+    /**
      * Get the number of LEDs this LED strip has.
      *
      * @return LED count.

@@ -53,6 +53,12 @@ public:
     ~LedStripAdapterLPD8806();
 
     // Override virtual method in BaseLedStripAdapter class
+    void init();
+
+    // Override virtual method in BaseLedStripAdapter class
+    void render();
+
+    // Override virtual method in BaseLedStripAdapter class
     LedStripColor getLedColor(uint8_t ledIndex);
 
     // Override virtual method in BaseLedStripAdapter class

@@ -29,6 +29,17 @@
 class BaseLedStripAdapter {
 public:
     /**
+     * Initialize the LED strip.
+     * Required before it's used.
+     */
+    virtual void init();
+
+    /**
+     * Render the state of the LED strip to the physical hardware.
+     */
+    virtual void render();
+
+    /**
      * Get the color of the given LED on the strip.
      *
      * @param ledIndex Index of the LED to configure.

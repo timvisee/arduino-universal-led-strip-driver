@@ -36,6 +36,16 @@ LedStripColor LedStripAdapterLPD8806::getLedColor(uint8_t ledIndex) {
     return LedStripColor::fromCombinedChannels(this->getLedColorCombinedChannels(ledIndex));
 }
 
+void LedStripAdapterLPD8806::init() {
+    // Initialize/begin the LED strip
+    this->strip.begin();
+}
+
+void LedStripAdapterLPD8806::render() {
+    // Render the LED strip
+    this->strip.show();
+}
+
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, LedStripColor color) {
     // Decapsulate the Color object, and set the LEDs color
     this->setLedColor(ledIndex, color.getCombinedChannels());
