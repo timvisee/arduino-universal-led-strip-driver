@@ -25,6 +25,8 @@
 
 #include "Arduino.h"
 
+#define LED_STRIP_COLOR_VALUE_MAX 127
+
 class LedStripColor {
 private:
     /**
@@ -48,6 +50,46 @@ private:
     uint8_t alphaChannel;
 
 public:
+    /**
+     * Constructor.
+     * This will default to white.
+     */
+    LedStripColor();
+
+    /**
+     * Constructor.
+     *
+     * @param redChannel Red channel intensity.
+     */
+    LedStripColor(uint8_t redChannel);
+
+    /**
+     * Constructor.
+     *
+     * @param redChannel Red channel intensity.
+     * @param greenChannel Green channel intensity.
+     */
+    LedStripColor(uint8_t redChannel, uint8_t greenChannel);
+
+    /**
+     * Constructor.
+     *
+     * @param redChannel Red channel intensity.
+     * @param greenChannel Green channel intensity.
+     * @param blue Blue channel intensity.
+     */
+    LedStripColor(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel);
+
+    /**
+     * Constructor.
+     *
+     * @param redChannel Red channel intensity.
+     * @param greenChannel Green channel intensity.
+     * @param blue Blue channel intensity.
+     * @param alpha Alpha channel intensity.
+     */
+    LedStripColor(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
+
     /**
      * Get the red channel intensity.
      *
