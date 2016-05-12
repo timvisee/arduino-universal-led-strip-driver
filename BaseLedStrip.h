@@ -90,6 +90,23 @@ protected:
 
 public:
     /**
+     * Get the color of the given LED on the strip.
+     *
+     * @param ledIndex Index of the LED to configure.
+     *
+     * @return LED color.
+     */
+    LedStripColor getLedColor(uint8_t ledIndex);
+
+    /**
+     * Set the color of the given LED on the strip.
+     *
+     * @param ledIndex Index of the LED to configure.
+     * @param color LED color.
+     */
+    void setLedColor(uint8_t ledIndex, LedStripColor color);
+
+    /**
      * Set the color using one color channel of the given LED on the strip.
      *
      * @param ledIndex Index of the LED to configure.

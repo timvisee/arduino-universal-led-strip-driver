@@ -43,6 +43,14 @@ void BaseLedStrip::setAdapter(BaseLedStripAdapter adapter) {
     this->adapter = adapter;
 }
 
+LedStripColor BaseLedStrip::getLedColor(uint8_t ledIndex) {
+    return this->adapter.getLedColor(ledIndex);
+}
+
+void BaseLedStrip::setLedColor(uint8_t ledIndex, LedStripColor color) {
+    return this->adapter.setLedColor(ledIndex, color);
+}
+
 void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel) {
     this->adapter.setLedColor(ledIndex, redChannel);
 }
