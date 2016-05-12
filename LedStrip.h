@@ -59,10 +59,13 @@ public:
      */
     LedStrip(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "HidingNonVirtualFunction"
     /**
      * Destructor.
      */
     ~LedStrip();
+#pragma clang diagnostic pop
 
     /**
      * Get the Arduino pin used for the data signal.
