@@ -46,7 +46,7 @@ private:
     /**
      * LED strip adapter for the used LED strip type.
      */
-    BaseLedStripAdapter adapter;
+    BaseLedStripAdapter* adapter;
 
 protected:
     /**
@@ -63,7 +63,7 @@ protected:
      * @param ledCount Number of LEDs.
      * @param adapter LED strip adapter for the used LED strip type.
      */
-    BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter adapter);
+    BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter* adapter);
 
     /**
      * Destructor.
@@ -94,7 +94,7 @@ public:
      *
      * @return LED strip adapter.
      */
-    BaseLedStripAdapter getAdapter();
+    BaseLedStripAdapter* getAdapter();
 
 protected:
     /**
@@ -102,7 +102,7 @@ protected:
      *
      * @param adapter LED strip adapter.
      */
-    void setAdapter(BaseLedStripAdapter adapter);
+    void setAdapter(BaseLedStripAdapter* adapter);
 
 public:
     /**

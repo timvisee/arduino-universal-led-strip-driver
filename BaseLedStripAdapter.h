@@ -32,12 +32,12 @@ public:
      * Initialize the LED strip.
      * Required before it's used.
      */
-    virtual void init();
+    virtual void init() = 0;
 
     /**
      * Render the state of the LED strip to the physical hardware.
      */
-    virtual void render();
+    virtual void render() = 0;
 
     /**
      * Get the color of the given LED on the strip.
@@ -46,7 +46,7 @@ public:
      *
      * @return LED color.
      */
-    virtual LedStripColor getLedColor(uint8_t ledIndex);
+    virtual LedStripColor getLedColor(uint8_t ledIndex) = 0;
 
     /**
      * Set the color of the given LED on the strip.
@@ -54,7 +54,7 @@ public:
      * @param ledIndex Index of the LED to configure.
      * @param color LED color.
      */
-    virtual void setLedColor(uint8_t ledIndex, LedStripColor color);
+    virtual void setLedColor(uint8_t ledIndex, LedStripColor color) = 0;
 
     /**
      * Set the color using one color channel of the given LED on the strip.
@@ -62,7 +62,7 @@ public:
      * @param ledIndex Index of the LED to configure.
      * @param redChannel Color value of the red channel (first channel).
      */
-    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel);
+    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel) = 0;
 
     /**
      * Set the color using two color channels of the given LED on the strip.
@@ -71,7 +71,7 @@ public:
      * @param redChannel Color value of the red channel (first channel).
      * @param greenChannel Color value of the green channel (second channel).
      */
-    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel);
+    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel) = 0;
 
     /**
      * Set the color using three color channels of the given LED on the strip.
@@ -81,7 +81,7 @@ public:
      * @param greenChannel Color value of the green channel (second channel).
      * @param blueChannel Color value of the blue channel (third channel).
      */
-    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel);
+    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) = 0;
 
     /**
      * Set the color using four color channels of the given LED on the strip.
@@ -92,7 +92,7 @@ public:
      * @param blueChannel Color value of the blue channel (third channel).
      * @param alphaChannel Color value of the alpha channel (fourth channel).
      */
-    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
+    virtual void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel) = 0;
 
     /**
      * Get the color of the given LED on the strip.
@@ -100,7 +100,7 @@ public:
      *
      * @return Combined color channels.
      */
-    virtual uint32_t getLedColorCombinedChannels(uint8_t ledIndex);
+    virtual uint32_t getLedColorCombinedChannels(uint8_t ledIndex) = 0;
 
     /**
      * Set the color of the given LED on the strip.
@@ -109,17 +109,17 @@ public:
      * @param ledIndex Index of the LED to configure.
      * @param combinedColorValue Color value.
      */
-    virtual void setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue);
+    virtual void setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue) = 0;
 
     /**
      * Get the number of color channels this LED strip has.
      */
-    virtual uint8_t getColorChannelCount();
+    virtual uint8_t getColorChannelCount() = 0;
 
     /**
      * Get the maximum color value for each color channel on this LED strip.
      */
-    virtual uint8_t getColorValueMax();
+    virtual uint8_t getColorValueMax() = 0;
 
     /**
      * Check whether this LED strip has support for the red color channel.

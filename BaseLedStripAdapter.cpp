@@ -22,40 +22,6 @@
 
 #include "BaseLedStripAdapter.h"
 
-void BaseLedStripAdapter::init() { }
-
-void BaseLedStripAdapter::render() { }
-
-LedStripColor BaseLedStripAdapter::getLedColor(uint8_t ledIndex) {
-    return LedStripColor();
-}
-
-void BaseLedStripAdapter::setLedColor(uint8_t ledIndex, LedStripColor color) { }
-
-void BaseLedStripAdapter::setLedColor(uint8_t ledIndex, uint8_t redChannel) { }
-
-void BaseLedStripAdapter::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel) { }
-
-void BaseLedStripAdapter::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel,
-                                      uint8_t blueChannel) { }
-
-void BaseLedStripAdapter::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
-                                      uint8_t alphaChannel) { }
-
-uint32_t BaseLedStripAdapter::getLedColorCombinedChannels(uint8_t ledIndex) {
-    return 0;
-}
-
-void BaseLedStripAdapter::setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue) { }
-
-uint8_t BaseLedStripAdapter::getColorChannelCount() {
-    return 0;
-}
-
-uint8_t BaseLedStripAdapter::getColorValueMax() {
-    return 0;
-}
-
 bool BaseLedStripAdapter::hasRedChannelSupport() {
     return this->getColorChannelCount() >= 1;
 }

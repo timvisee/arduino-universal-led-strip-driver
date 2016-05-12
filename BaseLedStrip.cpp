@@ -26,7 +26,7 @@ BaseLedStrip::BaseLedStrip(uint8_t ledCount) {
     this->ledCount = ledCount;
 }
 
-BaseLedStrip::BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter adapter) {
+BaseLedStrip::BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter* adapter) {
     this->ledCount = ledCount;
     this->adapter = adapter;
 }
@@ -41,35 +41,35 @@ uint8_t BaseLedStrip::getLedCount() {
     return this->ledCount;
 }
 
-BaseLedStripAdapter BaseLedStrip::getAdapter() {
+BaseLedStripAdapter* BaseLedStrip::getAdapter() {
     return this->adapter;
 }
 
-void BaseLedStrip::setAdapter(BaseLedStripAdapter adapter) {
+void BaseLedStrip::setAdapter(BaseLedStripAdapter* adapter) {
     this->adapter = adapter;
 }
 
 LedStripColor BaseLedStrip::getLedColor(uint8_t ledIndex) {
-    return this->adapter.getLedColor(ledIndex);
+    return (*this->adapter).getLedColor(ledIndex);
 }
 
 void BaseLedStrip::setLedColor(uint8_t ledIndex, LedStripColor color) {
-    return this->adapter.setLedColor(ledIndex, color);
+    (*this->adapter).setLedColor(ledIndex, color);
 }
 
 void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel) {
-    this->adapter.setLedColor(ledIndex, redChannel);
+    (*this->adapter).setLedColor(ledIndex, redChannel);
 }
 
 void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel) {
-    this->adapter.setLedColor(ledIndex, redChannel, greenChannel);
+    (*this->adapter).setLedColor(ledIndex, redChannel, greenChannel);
 }
 
 void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
-    this->adapter.setLedColor(ledIndex, redChannel, greenChannel, blueChannel);
+    (*this->adapter).setLedColor(ledIndex, redChannel, greenChannel, blueChannel);
 }
 
 void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
                                uint8_t alphaChannel) {
-    this->adapter.setLedColor(ledIndex, redChannel, greenChannel, blueChannel, alphaChannel);
+    (*this->adapter).setLedColor(ledIndex, redChannel, greenChannel, blueChannel, alphaChannel);
 }
