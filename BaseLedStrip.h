@@ -143,15 +143,6 @@ public:
      * @param alphaChannel Color value of the alpha channel (fourth channel).
      */
     void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
-
-    /**
-     * Set the color of the given LED on the strip.
-     * The color channels are combined for this method.
-     *
-     * @param ledIndex Index of the LED to configure.
-     * @param combinedColorValue Color value.
-     */
-    void setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue);
 };
 
 #endif // LEDSTRIPCONTROLLER_LEDSTRIPBASE_H

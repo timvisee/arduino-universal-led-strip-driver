@@ -67,7 +67,3 @@ void BaseLedStrip::setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t gre
                                uint8_t alphaChannel) {
     this->adapter.setLedColor(ledIndex, redChannel, greenChannel, blueChannel, alphaChannel);
 }
-
-void BaseLedStrip::setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue) {
-    this->adapter.setLedColor(ledIndex, combinedColorValue);
-}
