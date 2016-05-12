@@ -48,7 +48,7 @@ void LedStripAdapterLPD8806::render() {
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, LedStripColor color) {
     // Decapsulate the Color object, and set the LEDs color
-    this->setLedColor(ledIndex, color.getCombinedChannels());
+    this->setLedColorCombinedChannels(ledIndex, color.getCombinedChannels());
 }
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, uint8_t redChannel) {
