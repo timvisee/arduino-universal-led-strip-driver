@@ -22,12 +22,11 @@
 
 #include "LedStripColor.h"
 
-LedStripColor::LedStripColor() : LedStripColor((uint8_t) LED_STRIP_COLOR_VALUE_MAX) { }
+LedStripColor::LedStripColor() : LedStripColor(0) { }
 
-LedStripColor::LedStripColor(uint8_t redChannel) : LedStripColor(redChannel, (uint8_t) LED_STRIP_COLOR_VALUE_MAX) { }
+LedStripColor::LedStripColor(uint8_t redChannel) : LedStripColor(redChannel, 0) { }
 
-LedStripColor::LedStripColor(uint8_t redChannel, uint8_t greenChannel)
-        : LedStripColor(redChannel, greenChannel, (uint8_t) LED_STRIP_COLOR_VALUE_MAX) { }
+LedStripColor::LedStripColor(uint8_t redChannel, uint8_t greenChannel) : LedStripColor(redChannel, greenChannel, 0) { }
 
 LedStripColor::LedStripColor(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel)
         : LedStripColor(redChannel, greenChannel, blueChannel, (uint8_t) LED_STRIP_COLOR_VALUE_MAX) { }

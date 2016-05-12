@@ -52,7 +52,7 @@ private:
 public:
     /**
      * Constructor.
-     * This will default to white.
+     * This will default to black. The alpha channel is set to the maximum value.
      */
     LedStripColor();
 
