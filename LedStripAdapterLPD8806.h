@@ -30,6 +30,12 @@
 #define LPD8806_COLOR_CHANNEL_COUNT 3
 #define LPD8806_COLOR_VALUE_MAX 127
 
+/**
+ * LED strip adapter for LPD8806 type LED strips.
+ *
+ * @author Tim Visee
+ * @website http://timvisee.com/
+ */
 class LedStripAdapterLPD8806 : public LedStripAdapterBase {
 private:
     /**

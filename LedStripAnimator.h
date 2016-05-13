@@ -27,6 +27,13 @@
 
 #include "LedStripBase.h"
 
+/**
+ * LED strip animator helper class.
+ * This class provides methods to easily animate a LED strip.
+ *
+ * @author Tim Visee
+ * @website http://timvisee.com/
+ */
 class LedStripAnimator {
 public:
     /**

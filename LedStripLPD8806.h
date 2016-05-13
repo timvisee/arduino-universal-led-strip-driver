@@ -29,7 +29,7 @@
 #include "LedStripBase.h"
 #include "LedStripAdapterLPD8806.h"
 
-/**s
+/**
  * LedStrip class.
  * This class represents a physical LED strip, and provides an interface to control the strip.
  *

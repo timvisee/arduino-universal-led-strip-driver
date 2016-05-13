@@ -32,9 +32,10 @@
 #ifndef LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
 #define LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
 
+// Include the Arduino library
 #include <Arduino.h>
 
-// Include all required LED strip driver libraries
+// Include all LED strip driver headers
 #include "LedStripLPD8806.h"
 #include "LedStripColor.h"
 #include "LedStripAnimator.h"

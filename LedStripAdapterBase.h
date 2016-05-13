@@ -25,6 +25,13 @@
 
 #include "LedStripColor.h"
 
+/**
+ * LED strip adapter base class.
+ * This class is a base for LED strip adapters to ultimately support any type of LED strip.
+ *
+ * @author Tim Visee
+ * @website http://timvisee/
+ */
 class LedStripAdapterBase {
 public:
     /**

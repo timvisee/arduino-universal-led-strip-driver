@@ -30,6 +30,12 @@
 #define LED_STRIP_COLOR_WHEEL_SIZE LED_STRIP_COLOR_VALUE_SIZE * 3
 #define LED_STRIP_COLOR_WHEEL_SMALL_SIZE LED_STRIP_COLOR_VALUE_SIZE / 2 * 3
 
+/**
+ * LED strip color class representing a color used by the LED strip driver.
+ *
+ * @author Tim Visee
+ * @website http://timvisee.com/
+ */
 class LedStripColor {
 private:
     /**
