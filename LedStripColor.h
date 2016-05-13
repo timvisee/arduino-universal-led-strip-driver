@@ -103,6 +103,31 @@ public:
     static LedStripColor fromCombinedChannels(uint32_t combined);
 
     /**
+     * LED strip color instance representing black.
+     */
+    static LedStripColor black();
+
+    /**
+     * LED strip color instance representing white.
+     */
+    static LedStripColor white();
+
+    /**
+     * LED strip color instance representing red.
+     */
+    static LedStripColor red();
+
+    /**
+     * LED strip color instance representing green.
+     */
+    static LedStripColor green();
+
+    /**
+     * LED strip color instance representing blue.
+     */
+    static LedStripColor blue();
+
+    /**
      * Get the red channel intensity.
      *
      * @return Channel intensity.

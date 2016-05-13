@@ -51,6 +51,26 @@ LedStripColor LedStripColor::fromCombinedChannels(uint32_t combined) {
     return color;
 }
 
+LedStripColor LedStripColor::black() {
+    return LedStripColor(0, 0, 0);
+}
+
+LedStripColor LedStripColor::white() {
+    return LedStripColor(LED_STRIP_COLOR_VALUE_MAX, LED_STRIP_COLOR_VALUE_MAX, LED_STRIP_COLOR_VALUE_MAX);
+}
+
+LedStripColor LedStripColor::red() {
+    return LedStripColor(LED_STRIP_COLOR_VALUE_MAX, 0, 0);
+}
+
+LedStripColor LedStripColor::green() {
+    return LedStripColor(0, LED_STRIP_COLOR_VALUE_MAX, 0);
+}
+
+LedStripColor LedStripColor::blue() {
+    return LedStripColor(0, 0, LED_STRIP_COLOR_VALUE_MAX);
+}
+
 uint8_t LedStripColor::getRed() {
     return this->redChannel;
 }
