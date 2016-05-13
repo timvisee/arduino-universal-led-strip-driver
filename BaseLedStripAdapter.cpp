@@ -62,33 +62,33 @@ void BaseLedStripAdapter::setRangeLedColorsCombinedChannels(uint8_t fromLedIndex
 
 void BaseLedStripAdapter::setAllLedColors(LedStripColor color) {
     // Set all the LEDs using the range methods
-    this->setRangeLedColors(0, this->strip.numPixels(), color);
+    this->setRangeLedColors(0, this->getLedCount(), color);
 }
 
 void BaseLedStripAdapter::setAllLedColors(uint8_t redChannel) {
     // Set all the LEDs using the range methods
-    this->setRangeLedColors(0, this->strip.numPixels(), redChannel);
+    this->setRangeLedColors(0, this->getLedCount(), redChannel);
 }
 
 void BaseLedStripAdapter::setAllLedColors(uint8_t redChannel, uint8_t greenChannel) {
     // Set all the LEDs using the range methods
-    this->setRangeLedColors(0, this->strip.numPixels(), redChannel, greenChannel);
+    this->setRangeLedColors(0, this->getLedCount(), redChannel, greenChannel);
 }
 
 void BaseLedStripAdapter::setAllLedColors(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
     // Set all the LEDs using the range methods
-    this->setRangeLedColors(0, this->strip.numPixels(), redChannel, greenChannel, blueChannel);
+    this->setRangeLedColors(0, this->getLedCount(), redChannel, greenChannel, blueChannel);
 }
 
 void BaseLedStripAdapter::setAllLedColors(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
                                              uint8_t alphaChannel) {
     // Set all the LEDs using the range methods
-    this->setRangeLedColors(0, this->strip.numPixels(), redChannel, greenChannel, blueChannel, alphaChannel);
+    this->setRangeLedColors(0, this->getLedCount(), redChannel, greenChannel, blueChannel, alphaChannel);
 }
 
 void BaseLedStripAdapter::setAllLedColorsCombinedChannels(uint32_t combinedColorValue) {
     // Set all the LEDs using the range methods
-    this->setRangeLedColorsCombinedChannels(0, this->strip.numPixels(), combinedColorValue);
+    this->setRangeLedColorsCombinedChannels(0, this->getLedCount(), combinedColorValue);
 }
 
 bool BaseLedStripAdapter::hasRedChannelSupport() {

@@ -49,6 +49,11 @@ public:
     virtual void render() = 0;
 
     /**
+     * Get the number of LEDs controlled by this LED strip adapter.
+     */
+    virtual uint8_t getLedCount() = 0;
+
+    /**
      * Get the color of the given LED on the strip.
      *
      * @param ledIndex Index of the LED to configure.

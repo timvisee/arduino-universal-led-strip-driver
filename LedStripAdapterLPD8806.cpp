@@ -51,6 +51,10 @@ void LedStripAdapterLPD8806::render() {
     this->strip.show();
 }
 
+uint8_t LedStripAdapterLPD8806::getLedCount() {
+    return this->strip.numPixels();
+}
+
 LedStripColor LedStripAdapterLPD8806::getLedColor(uint8_t ledIndex) {
     return LedStripColor::fromCombinedChannels(this->getLedColorCombinedChannels(ledIndex));
 }
