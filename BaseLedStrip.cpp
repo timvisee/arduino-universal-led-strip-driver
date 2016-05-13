@@ -42,6 +42,10 @@ uint8_t BaseLedStrip::getLedCount() {
 }
 
 void BaseLedStrip::setLedCount(uint8_t ledCount) {
+    // Set the LED count field
+    this->ledCount = ledCount;
+
+    // Set the adapter's LED count
     return (*this->adapter).setLedCount(ledCount);
 }
 
