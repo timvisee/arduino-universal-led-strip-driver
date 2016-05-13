@@ -108,9 +108,9 @@ void LedStripAnimator::colorChase(LedStripBase *ledStrip, LedStripColor color, u
 void LedStripAnimator::theaterChase(LedStripBase *ledStrip, LedStripColor color, uint16_t cycles, unsigned long wait) {
     // Do a few cycles
     for(int cycle = 0; cycle < cycles; cycle++) {
-        for(int subLedIndex=0; subLedIndex < 3; subLedIndex++) {
+        for(uint16_t subLedIndex = 0; subLedIndex < 3; subLedIndex++) {
             // Turn every third LED on
-            for(int ledIndex=0; ledIndex < (*ledStrip).getLedCount(); ledIndex=ledIndex + 3)
+            for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex=ledIndex + 3)
                 (*ledStrip).setLedColor(ledIndex + subLedIndex, color);
 
             // Render the LED strip
@@ -136,9 +136,9 @@ void LedStripAnimator::theaterChaseRainbow(LedStripBase *ledStrip, unsigned long
 void LedStripAnimator::theaterChaseRainbow(LedStripBase *ledStrip, uint16_t cycles, unsigned long wait) {
     // Do a few cycles
     for(int cycle = 0; cycle < cycles; cycle++) {
-        for(int subLedIndex=0; subLedIndex < 3; subLedIndex++) {
+        for(uint16_t subLedIndex = 0; subLedIndex < 3; subLedIndex++) {
             // Turn every third LED on
-            for(int ledIndex=0; ledIndex < (*ledStrip).getLedCount(); ledIndex=ledIndex + 3)
+            for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex=ledIndex + 3)
                 (*ledStrip).setLedColor(ledIndex + subLedIndex,
                                         LedStripColor::fromSmallWheel((ledIndex + cycle) % LED_STRIP_COLOR_WHEEL_SMALL_SIZE)
                 );
@@ -150,7 +150,7 @@ void LedStripAnimator::theaterChaseRainbow(LedStripBase *ledStrip, uint16_t cycl
             delay(wait);
 
             // Turn the LEDs off again
-            for(int i = 0; i < (*ledStrip).getLedCount(); i = i + 3)
+            for(uint16_t i = 0; i < (*ledStrip).getLedCount(); i = i + 3)
                 (*ledStrip).setLedColor(i + subLedIndex, LedStripColor::black());
         }
     }
