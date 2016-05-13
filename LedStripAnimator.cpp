@@ -20,23 +20,27 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-/**
- * LED strip driver.
- *
- * This file should be included to set up and configure the LED strip driver, to make it ready to be used.
- *
- * @author Tim Visee
- * @website http://timvisee.com/
- */
-
-#ifndef LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
-#define LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
-
-#include <Arduino.h>
-
-// Include all required LED strip driver libraries
-#include "LedStripLPD8806.h"
-#include "LedStripColor.h"
 #include "LedStripAnimator.h"
 
-#endif // LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
+void LedStripAnimator::rainbow(LedStripBase *ledStrip) {
+    LedStripAnimator::rainbow(ledStrip, 0);
+}
+
+void LedStripAnimator::rainbow(LedStripBase *ledStrip, unsigned long wait) {
+    // Define the for-loop index variables
+    uint16_t ledIndex, iteration;
+
+    // Loop through all the rainbow iterations
+    for(iteration = 0; iteration < LED_STRIP_COLOR_WHEEL_SIZE; iteration += 2) {
+        // Color all the LEDs
+        for(ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++)
+            (*ledStrip).setLedColor(ledIndex, LedStripColor::fromWheel((ledIndex + iteration)));
+
+        // Render the LED strip
+        (*ledStrip).render();
+
+        // Wait for the given amount of time
+        delay(wait);
+    }
+}
+

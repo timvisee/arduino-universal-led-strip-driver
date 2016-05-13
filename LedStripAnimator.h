@@ -20,23 +20,26 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-/**
- * LED strip driver.
- *
- * This file should be included to set up and configure the LED strip driver, to make it ready to be used.
- *
- * @author Tim Visee
- * @website http://timvisee.com/
- */
-
-#ifndef LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
-#define LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
+#ifndef LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
+#define LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
 
 #include <Arduino.h>
 
-// Include all required LED strip driver libraries
-#include "LedStripLPD8806.h"
-#include "LedStripColor.h"
-#include "LedStripAnimator.h"
+#include "LedStripBase.h"
 
-#endif // LEDSTRIPDRIVER_LEDSTRIPDRIVER_H
+class LedStripAnimator {
+public:
+    /**
+     * Rainbow animation.
+     */
+    static void rainbow(LedStripBase* ledStrip);
+
+    /**
+     * Rainbow animation.
+     *
+     * @param wait Number of milliseconds to wait between each rainbow cycle.
+     */
+    static void rainbow(LedStripBase* ledStrip, unsigned long wait);
+};
+
+#endif // LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
