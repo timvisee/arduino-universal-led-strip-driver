@@ -69,7 +69,8 @@ void LedStripAnimator::rainbowFit(LedStripBase *ledStrip, unsigned long wait) {
 }
 
 void LedStripAnimator::colorWipe(LedStripBase *ledStrip, LedStripColor color, unsigned long wait) {
-    for(uint16_t ledIndex=0; ledIndex < (*ledStrip).getLedCount(); ledIndex++) {
+    // Loop through all LEDs
+    for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++) {
         // Set the color of the current LED
         (*ledStrip).setLedColor(ledIndex, color);
 
@@ -79,4 +80,27 @@ void LedStripAnimator::colorWipe(LedStripBase *ledStrip, LedStripColor color, un
         // Wait for the given amount of time
         delay(wait);
     }
+}
+
+void LedStripAnimator::colorChase(LedStripBase *ledStrip, LedStripColor color, unsigned long wait) {
+    // Clear the LED strip
+    (*ledStrip).clear(false);
+
+    // Loop through all LEDs one by one
+    for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++) {
+        // Set the color of the current LED
+        (*ledStrip).setLedColor(ledIndex, color);
+
+        // Render the LED strip
+        (*ledStrip).render();
+
+        // Clear the pixel, but don't refresh to keep it on until the next iteration
+        (*ledStrip).setLedColor(ledIndex, LedStripColor::black());
+
+        // Wait for the given amount of time
+        delay(wait);
+    }
+
+    // Render once more to turn off the last pixel
+    (*ledStrip).render();
 }
