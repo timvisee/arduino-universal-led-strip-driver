@@ -59,9 +59,102 @@ void setup() {
  * Called once each loop/update.
  */
 void loop() {
-    // Set the color of the given LED
-    strip.setRangeLedColors(0, 5, 255, 255, 0);
 
-    // Render the LED strip
-    strip.render();
+    /*
+     * All LEDs on the LED strip can be set to a specific value.
+     * The LED strip driver will output the values to the LED strip when the render method is called.
+     */
+
+    // Flash three times
+    for(int i = 0; i < 3; i++) {
+        // Color the LED strip
+        strip.setRangeLedColors(0, 10, 255, 0, 0);
+        strip.render();
+
+        // Wait a little
+        delay(500);
+
+        // Clear the LED strip
+        strip.clear(true);
+
+        // Wait a little
+        delay(500);
+    }
+
+
+
+    // Fade in
+    for(int i = 0; i < LED_STRIP_COLOR_VALUE_MAX; i++) {
+        // Set the color of each LED
+        strip.setRangeLedColors(0, 10, i, i, i);
+
+        // Render the LED strip
+        strip.render();
+    }
+    delay(500);
+
+
+
+    // Fade out
+    for(int i = LED_STRIP_COLOR_VALUE_MAX - 1; i >= 0; i--) {
+        // Set the color of each LED
+        strip.setRangeLedColors(0, 10, i, i, i);
+
+        // Render the LED strip
+        strip.render();
+    }
+    delay(500);
+
+
+
+    // Light up some random pixels a few times
+    for(int cycle = 0; cycle < 5; cycle++) {
+        // Light up some random pixels
+        for(int i = 0; i < 10; i++)
+            strip.setLedColor(random(0, LED_STRIP_LED_COUNT), 0, 255, 255);
+
+        // Render the LED strip
+        strip.render();
+
+        // Wait a little
+        delay(500);
+
+        // Clear the LED strip
+        strip.clear(true);
+
+        // Wait a little
+        delay(500);
+    }
+
+
+
+    /*
+     * The LED strip driver provides an animator class.
+     * This animator allows you to show various animations with a single line of code.
+     * Animations are automatically rendered to the strip, thus an explicit call to the render method isn't required.
+     */
+
+    // Chase animations
+    LedStripAnimator::chase(&strip, LedStripColor::blue(), 5);
+    delay(500);
+    LedStripAnimator::chase(&strip, LedStripColor(255, 0, 255), 50);
+    delay(500);
+
+
+
+    // Whipe animation
+    LedStripAnimator::wipe(&strip, LedStripColor(255, 127, 0), 5);
+    delay(500);
+
+
+
+    // Rainbow animation
+    LedStripAnimator::rainbow(&strip, 5);
+    delay(500);
+
+
+
+    // Fitted rainbow animation
+    LedStripAnimator::rainbowFit(&strip, 5);
+    delay(500);
 }
