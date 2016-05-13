@@ -85,6 +85,23 @@ public:
      * @param wait Number of milliseconds to wait between each cycle.
      */
     static void theaterChase(LedStripBase* ledStrip, LedStripColor color, uint16_t cycles, unsigned long wait);
+
+    /**
+     * Theater styled chasing animation with a rainbow which chases one dot down the LED strip.
+     *
+     * @param ledStrip Led strip instance pointer.
+     * @param wait Number of milliseconds to wait between each cycle.
+     */
+    static void theaterChaseRainbow(LedStripBase* ledStrip, unsigned long wait);
+
+    /**
+     * Theater styled chasing animation with a rainbow which chases one dot down the LED strip.
+     *
+     * @param ledStrip Led strip instance pointer.
+     * @param cycles Number of cycles.
+     * @param wait Number of milliseconds to wait between each cycle.
+     */
+    static void theaterChaseRainbow(LedStripBase* ledStrip, uint16_t cycles, unsigned long wait);
 };
 
 #endif // LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
