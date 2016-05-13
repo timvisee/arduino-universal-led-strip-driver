@@ -24,7 +24,7 @@
 #define LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
 
 // Include all required LED strip controller libraries
-#include "LedStrip.h"
+#include "LedStripLPD8806.h"
 #include "LedStripColor.h"
 
 #endif // LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H

@@ -20,35 +20,75 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#include "LedStrip.h"
+#ifndef LEDSTRIPCONTROLLER_LEDSTRIPLPD8806_H
+#define LEDSTRIPCONTROLLER_LEDSTRIPLPD8806_H
 
-LedStrip::LedStrip(uint8_t ledCount, uint8_t pinData, uint8_t pinClock) : BaseLedStrip(ledCount) {
-    // Set the fields
-    this->pinData = pinData;
-    this->pinClock = pinClock;
+#include "LPD8806.h"
+#include "SPI.h"
 
-    // Configure and set the adapter
-    this->setAdapter(new LedStripAdapterLPD8806(ledCount, pinData, pinClock));
-}
+#include "BaseLedStrip.h"
+#include "LedStripAdapterLPD8806.h"
 
-LedStrip::~LedStrip() { }
+/**s
+ * LedStrip class.
+ * This class represents a physical LED strip, and provides an interface to control the strip.
+ *
+ * @author Tim Visee
+ * @website http://timvisee.com/
+ * @version 1.1
+ */
+class LedStripLPD8806 : public BaseLedStrip {
+private:
+    /**
+     * Pin used for data transfer to the LED strip.
+     */
+    uint8_t pinData;
 
-uint8_t LedStrip::getDataPin() {
-    return this->pinData;
-}
+    /**
+     * Pin used for the data clock signal.
+     */
+    uint8_t pinClock;
 
-uint8_t LedStrip::getClockPin() {
-    return this->pinClock;
-}
+public:
+    /**
+     * Constructor.
+     *
+     * @param ledCount Number of LEDs on this LED strip.
+     * @param pinData Arduino PIN for data.
+     * @param pinClock Arduino PIN for clock.
+     */
+    LedStripLPD8806(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
 
-void LedStrip::init() {
-    (*this->getAdapter()).init();
-}
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "HidingNonVirtualFunction"
+    /**
+     * Destructor.
+     */
+    ~LedStripLPD8806();
+#pragma clang diagnostic pop
 
-void LedStrip::init(bool render) {
-    (*this->getAdapter()).init(render);
-}
+    /**
+     * Get the Arduino pin used for the data signal.
+     *
+     * @return Data pin.
+     */
+    uint8_t getDataPin();
 
-void LedStrip::render() {
-    (*this->getAdapter()).render();
-}
+    /**
+     * Get the Arduino pin used for the clock signal.
+     *
+     * @return Clock pin.
+     */
+    uint8_t getClockPin();
+
+    // Override virtual method in BaseLedStrip class
+    void init();
+
+    // Override virtual method in BaseLedStrip class
+    void init(bool render);
+
+    // Override virtual method in BaseLedStrip class
+    void render();
+};
+
+#endif // LEDSTRIPCONTROLLER_LEDSTRIPLPD8806_H
