@@ -124,7 +124,7 @@ public:
      * Set the color of the LEDs in the given range on the strip.
      *
      * @param fromLedIndex From LED index.
-     * @param toLedIndex To LED index.
+     * @param toLedIndex To LED index. (excluded)
      * @param color LED color.
      */
     virtual void setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, LedStripColor color) = 0;
@@ -133,7 +133,7 @@ public:
      * Set the color using one color channel of the LEDs in the given range on the strip.
      *
      * @param fromLedIndex From LED index.
-     * @param toLedIndex To LED index.
+     * @param toLedIndex To LED index. (excluded)
      * @param redChannel Color value of the red channel (first channel).
      */
     virtual void setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel) = 0;
@@ -142,7 +142,7 @@ public:
      * Set the color using two color channels of the LEDs in the given range on the strip.
      *
      * @param fromLedIndex From LED index.
-     * @param toLedIndex To LED index.
+     * @param toLedIndex To LED index. (excluded)
      * @param redChannel Color value of the red channel (first channel).
      * @param greenChannel Color value of the green channel (second channel).
      */
@@ -153,7 +153,7 @@ public:
      * Set the color using three color channels of the LEDs in the given range on the strip.
      *
      * @param fromLedIndex From LED index.
-     * @param toLedIndex To LED index.
+     * @param toLedIndex To LED index. (excluded)
      * @param redChannel Color value of the red channel (first channel).
      * @param greenChannel Color value of the green channel (second channel).
      * @param blueChannel Color value of the blue channel (third channel).
@@ -165,7 +165,7 @@ public:
      * Set the color using four color channels of the LEDs in the given range on the strip.
      *
      * @param fromLedIndex From LED index.
-     * @param toLedIndex To LED index.
+     * @param toLedIndex To LED index. (excluded)
      * @param redChannel Color value of the red channel (first channel).
      * @param greenChannel Color value of the green channel (second channel).
      * @param blueChannel Color value of the blue channel (third channel).
@@ -179,7 +179,7 @@ public:
      * The color channels are combined for this method.
      *
      * @param fromLedIndex From LED index.
-     * @param toLedIndex To LED index.
+     * @param toLedIndex To LED index. (excluded)
      * @param combinedColorValue Color value.
      */
     virtual void setRangeLedColorsCombinedChannels(uint8_t fromLedIndex, uint8_t toLedIndex,
