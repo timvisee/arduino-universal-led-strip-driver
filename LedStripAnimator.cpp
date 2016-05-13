@@ -104,3 +104,27 @@ void LedStripAnimator::colorChase(LedStripBase *ledStrip, LedStripColor color, u
     // Render once more to turn off the last pixel
     (*ledStrip).render();
 }
+
+void LedStripAnimator::theaterChase(LedStripBase *ledStrip, LedStripColor color, uint16_t cycles, unsigned long wait) {
+    // Do a few cycles
+    for(int cycle = 0; cycle < 10; cycle++) {
+        for(int subLedIndex=0; subLedIndex < 3; subLedIndex++) {
+            // Turn every third LED on
+            for(int ledIndex=0; ledIndex < (*ledStrip).getLedCount(); ledIndex=ledIndex + 3)
+                (*ledStrip).setLedColor(ledIndex + subLedIndex, color);
+
+            // Render the LED strip
+            (*ledStrip).render();
+
+            // Wait for the given amount of time
+            delay(wait);
+
+            // Turn the LEDs off again
+            for(int i = 0; i < (*ledStrip).getLedCount(); i = i + 3)
+                (*ledStrip).setLedColor(i + subLedIndex, LedStripColor::black());        //turn every third pixel off
+        }
+    }
+
+    // Render once more to turn off the last pixels
+    (*ledStrip).render();
+}
