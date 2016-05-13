@@ -57,7 +57,7 @@ public:
      * @param pinData Arduino PIN for data.
      * @param pinClock Arduino PIN for clock.
      */
-    LedStripLPD8806(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
+    LedStripLPD8806(uint16_t ledCount, uint8_t pinData, uint8_t pinClock);
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "HidingNonVirtualFunction"

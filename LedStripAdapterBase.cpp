@@ -22,41 +22,41 @@
 
 #include "LedStripAdapterBase.h"
 
-void BaseLedStripAdapter::setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, LedStripColor color) {
+void BaseLedStripAdapter::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, LedStripColor color) {
     // Loop through the LED range to set the values
-    for(uint8_t i = fromLedIndex; i < toLedIndex; i++)
+    for(uint16_t i = fromLedIndex; i < toLedIndex; i++)
         this->setLedColor(i, color);
 }
 
-void BaseLedStripAdapter::setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel) {
+void BaseLedStripAdapter::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel) {
     // Loop through the LED range to set the values
-    for(uint8_t i = fromLedIndex; i < toLedIndex; i++)
+    for(uint16_t i = fromLedIndex; i < toLedIndex; i++)
         this->setLedColor(i, redChannel);
 }
 
-void BaseLedStripAdapter::setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel,
-                                               uint8_t greenChannel) {
+void BaseLedStripAdapter::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
+                                               uint16_t greenChannel) {
     // Loop through the LED range to set the values
-    for(uint8_t i = fromLedIndex; i < toLedIndex; i++)
+    for(uint16_t i = fromLedIndex; i < toLedIndex; i++)
         this->setLedColor(i, redChannel, greenChannel);
 }
 
-void BaseLedStripAdapter::setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
+void BaseLedStripAdapter::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
     // Loop through the LED range to set the values
-    for(uint8_t i = fromLedIndex; i < toLedIndex; i++)
+    for(uint16_t i = fromLedIndex; i < toLedIndex; i++)
         this->setLedColor(i, redChannel, greenChannel, blueChannel);
 }
 
-void BaseLedStripAdapter::setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel,
+void BaseLedStripAdapter::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
                                                uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel) {
     // Loop through the LED range to set the values
-    for(uint8_t i = fromLedIndex; i < toLedIndex; i++)
+    for(uint16_t i = fromLedIndex; i < toLedIndex; i++)
         this->setLedColor(i, redChannel, greenChannel, blueChannel, alphaChannel);
 }
 
-void BaseLedStripAdapter::setRangeLedColorsCombinedChannels(uint8_t fromLedIndex, uint8_t toLedIndex, uint32_t combinedColorValue) {
+void BaseLedStripAdapter::setRangeLedColorsCombinedChannels(uint16_t fromLedIndex, uint16_t toLedIndex, uint32_t combinedColorValue) {
     // Loop through the LED range to set the values
-    for(uint8_t i = fromLedIndex; i < toLedIndex; i++)
+    for(uint16_t i = fromLedIndex; i < toLedIndex; i++)
         this->setLedColorCombinedChannels(i, combinedColorValue);
 }
 

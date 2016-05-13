@@ -52,7 +52,7 @@ protected:
      *
      * @param ledCount Number of LEDs.
      */
-    BaseLedStrip(uint8_t ledCount);
+    BaseLedStrip(uint16_t ledCount);
 
     /**
      * Constructor.
@@ -60,7 +60,7 @@ protected:
      * @param ledCount Number of LEDs.
      * @param adapter LED strip adapter for the used LED strip type.
      */
-    BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter* adapter);
+    BaseLedStrip(uint16_t ledCount, BaseLedStripAdapter* adapter);
 
     /**
      * Destructor.
@@ -84,14 +84,14 @@ public:
      *
      * @return LED count.
      */
-    uint8_t getLedCount();
+    uint16_t getLedCount();
 
     /**
      * Set and update the number of LEDs this LED strip has.
      *
      * @param ledCount LED count.
      */
-    void setLedCount(uint8_t ledCount);
+    void setLedCount(uint16_t ledCount);
 
     /**
      * Get the LED strip adapter instance.
@@ -116,7 +116,7 @@ public:
      *
      * @return LED color.
      */
-    LedStripColor getLedColor(uint8_t ledIndex);
+    LedStripColor getLedColor(uint16_t ledIndex);
 
     /**
      * Set the color of the given LED on the strip.
@@ -124,7 +124,7 @@ public:
      * @param ledIndex Index of the LED to configure.
      * @param color LED color.
      */
-    void setLedColor(uint8_t ledIndex, LedStripColor color);
+    void setLedColor(uint16_t ledIndex, LedStripColor color);
 
     /**
      * Set the color using one color channel of the given LED on the strip.
@@ -132,7 +132,7 @@ public:
      * @param ledIndex Index of the LED to configure.
      * @param redChannel Color value of the red channel (first channel).
      */
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel);
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel);
 
     /**
      * Set the color using two color channels of the given LED on the strip.
@@ -141,7 +141,7 @@ public:
      * @param redChannel Color value of the red channel (first channel).
      * @param greenChannel Color value of the green channel (second channel).
      */
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel);
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel);
 
     /**
      * Set the color using three color channels of the given LED on the strip.
@@ -151,7 +151,7 @@ public:
      * @param greenChannel Color value of the green channel (second channel).
      * @param blueChannel Color value of the blue channel (third channel).
      */
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel);
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel);
 
     /**
      * Set the color using four color channels of the given LED on the strip.
@@ -162,7 +162,7 @@ public:
      * @param blueChannel Color value of the blue channel (third channel).
      * @param alphaChannel Color value of the alpha channel (fourth channel).
      */
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
                      uint8_t alphaChannel);
 
     /**
@@ -172,7 +172,7 @@ public:
      * @param toLedIndex To LED index. (excluded)
      * @param color LED color.
      */
-    void setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, LedStripColor color);
+    void setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, LedStripColor color);
 
     /**
      * Set the color using one color channel of the LEDs in the given range on the strip.
@@ -181,7 +181,7 @@ public:
      * @param toLedIndex To LED index. (excluded)
      * @param redChannel Color value of the red channel (first channel).
      */
-    void setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel);
+    void setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel);
 
     /**
      * Set the color using two color channels of the LEDs in the given range on the strip.
@@ -191,7 +191,7 @@ public:
      * @param redChannel Color value of the red channel (first channel).
      * @param greenChannel Color value of the green channel (second channel).
      */
-    void setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel,
+    void setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
                                    uint8_t greenChannel);
 
     /**
@@ -203,7 +203,7 @@ public:
      * @param greenChannel Color value of the green channel (second channel).
      * @param blueChannel Color value of the blue channel (third channel).
      */
-    void setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel,
+    void setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
                                    uint8_t greenChannel, uint8_t blueChannel);
 
     /**
@@ -216,7 +216,7 @@ public:
      * @param blueChannel Color value of the blue channel (third channel).
      * @param alphaChannel Color value of the alpha channel (fourth channel).
      */
-    void setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, uint8_t redChannel,
+    void setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
                                    uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
 
     /**

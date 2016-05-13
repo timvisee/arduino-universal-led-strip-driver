@@ -45,7 +45,7 @@ public:
      * @param pinData Data pin.
      * @param pinClock Clock pin.
      */
-    LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData, uint8_t pinClock);
+    LedStripAdapterLPD8806(uint16_t ledCount, uint8_t pinData, uint8_t pinClock);
 
     /**
      * Destructor.
@@ -62,34 +62,34 @@ public:
     void render();
 
     // Override virtual method in BaseLedStripAdapter class
-    uint8_t getLedCount();
+    uint16_t getLedCount();
 
     // Override virtual method in BaseLedStripAdapter class
-    void setLedCount(uint8_t ledCount);
+    void setLedCount(uint16_t ledCount);
 
     // Override virtual method in BaseLedStripAdapter class
-    LedStripColor getLedColor(uint8_t ledIndex);
+    LedStripColor getLedColor(uint16_t ledIndex);
 
     // Override virtual method in BaseLedStripAdapter class
-    void setLedColor(uint8_t ledIndex, LedStripColor color);
+    void setLedColor(uint16_t ledIndex, LedStripColor color);
 
     // Override virtual method in BaseLedStripAdapter class
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel);
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel);
 
     // Override virtual method in BaseLedStripAdapter class
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel);
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel);
 
     // Override virtual method in BaseLedStripAdapter class
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel);
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel);
 
     // Override virtual method in BaseLedStripAdapter class
-    void setLedColor(uint8_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
+    void setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel, uint8_t alphaChannel);
 
     // Override virtual method in BaseLedStripAdapter class
-    uint32_t getLedColorCombinedChannels(uint8_t ledIndex);
+    uint32_t getLedColorCombinedChannels(uint16_t ledIndex);
 
     // Override virtual method in BaseLedStripAdapter class
-    void setLedColorCombinedChannels(uint8_t ledIndex, uint32_t combinedColorValue);
+    void setLedColorCombinedChannels(uint16_t ledIndex, uint32_t combinedColorValue);
 
     // Override virtual method in BaseLedStripAdapter class
     uint8_t getColorChannelCount();
