@@ -56,6 +56,19 @@ void BaseLedStrip::setAdapter(BaseLedStripAdapter* adapter) {
     this->adapter = adapter;
 }
 
+void BaseLedStrip::clear() {
+    this->setAllLedColors(LedStripColor::black());
+}
+
+void BaseLedStrip::clear(bool render) {
+    // Clear the LEDs
+    this->setAllLedColors(LedStripColor::black());
+
+    // Render
+    if(render)
+        this->render();
+}
+
 LedStripColor BaseLedStrip::getLedColor(uint16_t ledIndex) {
     return (*this->adapter).getLedColor(ledIndex);
 }

@@ -110,6 +110,21 @@ protected:
 
 public:
     /**
+     * Clear the LEDs on the LED strip.
+     * This will set all LEDs to black.
+     * This will automatically render the cleared LEDs.
+     */
+    void clear();
+
+    /**
+     * Clear the LEDs on the LED strip.
+     * This will set all LEDs to black.
+     *
+     * @param render True to automatically render once after all LEDs have been cleared.
+     */
+    void clear(bool render);
+
+    /**
      * Get the color of the given LED on the strip.
      *
      * @param ledIndex Index of the LED to configure.
