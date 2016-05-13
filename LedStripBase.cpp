@@ -57,7 +57,7 @@ void BaseLedStrip::setAdapter(BaseLedStripAdapter* adapter) {
 }
 
 void BaseLedStrip::clear() {
-    this->setAllLedColors(LedStripColor::black());
+    this->clear(true);
 }
 
 void BaseLedStrip::clear(bool render) {
