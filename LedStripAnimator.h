@@ -23,7 +23,8 @@
 #ifndef LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
 #define LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
 
-#include "LedStripDriver.h"
+#include <Arduino.h>
+
 #include "LedStripBase.h"
 
 /**

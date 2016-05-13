@@ -23,7 +23,6 @@
 #ifndef LEDSTRIPDRIVER_LEDSTRIPLPD8806_H
 #define LEDSTRIPDRIVER_LEDSTRIPLPD8806_H
 
-#include "LedStripDriver.h"
 #include "LedStripBase.h"
 #include "LedStripAdapterLPD8806.h"
 
