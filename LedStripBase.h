@@ -33,7 +33,7 @@
  * @website http://timvisee.com/
  * @version 1.1
  */
-class BaseLedStrip {
+class LedStripBase {
 private:
     /**
      * Number of LEDs this LED strip contains.
@@ -43,7 +43,7 @@ private:
     /**
      * LED strip adapter for the used LED strip type.
      */
-    BaseLedStripAdapter* adapter;
+    LedStripAdapterBase* adapter;
 
 protected:
     /**
@@ -52,7 +52,7 @@ protected:
      *
      * @param ledCount Number of LEDs.
      */
-    BaseLedStrip(uint16_t ledCount);
+    LedStripBase(uint16_t ledCount);
 
     /**
      * Constructor.
@@ -60,12 +60,12 @@ protected:
      * @param ledCount Number of LEDs.
      * @param adapter LED strip adapter for the used LED strip type.
      */
-    BaseLedStrip(uint16_t ledCount, BaseLedStripAdapter* adapter);
+    LedStripBase(uint16_t ledCount, LedStripAdapterBase* adapter);
 
     /**
      * Destructor.
      */
-    ~BaseLedStrip();
+    ~LedStripBase();
 
 public:
     /**
@@ -98,7 +98,7 @@ public:
      *
      * @return LED strip adapter.
      */
-    BaseLedStripAdapter* getAdapter();
+    LedStripAdapterBase* getAdapter();
 
 protected:
     /**
@@ -106,7 +106,7 @@ protected:
      *
      * @param adapter LED strip adapter.
      */
-    void setAdapter(BaseLedStripAdapter* adapter);
+    void setAdapter(LedStripAdapterBase* adapter);
 
 public:
     /**

@@ -25,7 +25,7 @@
 
 #include "LedStripColor.h"
 
-class BaseLedStripAdapter {
+class LedStripAdapterBase {
 public:
     /**
      * Initialize the LED strip.

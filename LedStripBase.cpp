@@ -22,25 +22,25 @@
 
 #include "LedStripBase.h"
 
-BaseLedStrip::BaseLedStrip(uint16_t ledCount) {
+LedStripBase::LedStripBase(uint16_t ledCount) {
     this->ledCount = ledCount;
 }
 
-BaseLedStrip::BaseLedStrip(uint16_t ledCount, BaseLedStripAdapter* adapter) {
+LedStripBase::LedStripBase(uint16_t ledCount, LedStripAdapterBase* adapter) {
     this->ledCount = ledCount;
     this->adapter = adapter;
 }
 
-BaseLedStrip::~BaseLedStrip() {
+LedStripBase::~LedStripBase() {
     // Explicitly delete dynamically allocated LED strip adapter
     delete &this->adapter;
 }
 
-uint16_t BaseLedStrip::getLedCount() {
+uint16_t LedStripBase::getLedCount() {
     return this->ledCount;
 }
 
-void BaseLedStrip::setLedCount(uint16_t ledCount) {
+void LedStripBase::setLedCount(uint16_t ledCount) {
     // Set the LED count field
     this->ledCount = ledCount;
 
@@ -48,19 +48,19 @@ void BaseLedStrip::setLedCount(uint16_t ledCount) {
     return (*this->adapter).setLedCount(ledCount);
 }
 
-BaseLedStripAdapter* BaseLedStrip::getAdapter() {
+LedStripAdapterBase* LedStripBase::getAdapter() {
     return this->adapter;
 }
 
-void BaseLedStrip::setAdapter(BaseLedStripAdapter* adapter) {
+void LedStripBase::setAdapter(LedStripAdapterBase* adapter) {
     this->adapter = adapter;
 }
 
-void BaseLedStrip::clear() {
+void LedStripBase::clear() {
     this->clear(true);
 }
 
-void BaseLedStrip::clear(bool render) {
+void LedStripBase::clear(bool render) {
     // Clear the LEDs
     this->setAllLedColors(LedStripColor::black());
 
@@ -69,71 +69,71 @@ void BaseLedStrip::clear(bool render) {
         this->render();
 }
 
-LedStripColor BaseLedStrip::getLedColor(uint16_t ledIndex) {
+LedStripColor LedStripBase::getLedColor(uint16_t ledIndex) {
     return (*this->adapter).getLedColor(ledIndex);
 }
 
-void BaseLedStrip::setLedColor(uint16_t ledIndex, LedStripColor color) {
+void LedStripBase::setLedColor(uint16_t ledIndex, LedStripColor color) {
     (*this->adapter).setLedColor(ledIndex, color);
 }
 
-void BaseLedStrip::setLedColor(uint16_t ledIndex, uint8_t redChannel) {
+void LedStripBase::setLedColor(uint16_t ledIndex, uint8_t redChannel) {
     (*this->adapter).setLedColor(ledIndex, redChannel);
 }
 
-void BaseLedStrip::setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel) {
+void LedStripBase::setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel) {
     (*this->adapter).setLedColor(ledIndex, redChannel, greenChannel);
 }
 
-void BaseLedStrip::setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
+void LedStripBase::setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
     (*this->adapter).setLedColor(ledIndex, redChannel, greenChannel, blueChannel);
 }
 
-void BaseLedStrip::setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
+void LedStripBase::setLedColor(uint16_t ledIndex, uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
                                uint8_t alphaChannel) {
     (*this->adapter).setLedColor(ledIndex, redChannel, greenChannel, blueChannel, alphaChannel);
 }
 
-void BaseLedStrip::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, LedStripColor color) {
+void LedStripBase::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, LedStripColor color) {
     (*this->adapter).setRangeLedColors(fromLedIndex, toLedIndex, color);
 }
 
-void BaseLedStrip::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel) {
+void LedStripBase::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel) {
     (*this->adapter).setRangeLedColors(fromLedIndex, toLedIndex, redChannel);
 }
 
-void BaseLedStrip::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
+void LedStripBase::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
                                      uint8_t greenChannel) {
     (*this->adapter).setRangeLedColors(fromLedIndex, toLedIndex, redChannel, greenChannel);
 }
 
-void BaseLedStrip::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel, uint8_t greenChannel,
+void LedStripBase::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel, uint8_t greenChannel,
                                      uint8_t blueChannel) {
     (*this->adapter).setRangeLedColors(fromLedIndex, toLedIndex, redChannel, greenChannel, blueChannel);
 }
 
-void BaseLedStrip::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel, uint8_t greenChannel,
+void LedStripBase::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel, uint8_t greenChannel,
                                      uint8_t blueChannel, uint8_t alphaChannel) {
     (*this->adapter).setRangeLedColors(fromLedIndex, toLedIndex, redChannel, greenChannel, blueChannel, alphaChannel);
 }
 
-void BaseLedStrip::setAllLedColors(LedStripColor color) {
+void LedStripBase::setAllLedColors(LedStripColor color) {
     (*this->adapter).setAllLedColors(color);
 }
 
-void BaseLedStrip::setAllLedColors(uint8_t redChannel) {
+void LedStripBase::setAllLedColors(uint8_t redChannel) {
     (*this->adapter).setAllLedColors(redChannel);
 }
 
-void BaseLedStrip::setAllLedColors(uint8_t redChannel, uint8_t greenChannel) {
+void LedStripBase::setAllLedColors(uint8_t redChannel, uint8_t greenChannel) {
     (*this->adapter).setAllLedColors(redChannel, greenChannel);
 }
 
-void BaseLedStrip::setAllLedColors(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
+void LedStripBase::setAllLedColors(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
     (*this->adapter).setAllLedColors(redChannel, greenChannel, blueChannel);
 }
 
-void BaseLedStrip::setAllLedColors(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
+void LedStripBase::setAllLedColors(uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel,
                                      uint8_t alphaChannel) {
     (*this->adapter).setAllLedColors(redChannel, greenChannel, blueChannel, alphaChannel);
 }

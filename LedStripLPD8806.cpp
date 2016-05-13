@@ -22,7 +22,7 @@
 
 #include "LedStripLPD8806.h"
 
-LedStripLPD8806::LedStripLPD8806(uint16_t ledCount, uint8_t pinData, uint8_t pinClock) : BaseLedStrip(ledCount) {
+LedStripLPD8806::LedStripLPD8806(uint16_t ledCount, uint8_t pinData, uint8_t pinClock) : LedStripBase(ledCount) {
     // Set the fields
     this->pinData = pinData;
     this->pinClock = pinClock;

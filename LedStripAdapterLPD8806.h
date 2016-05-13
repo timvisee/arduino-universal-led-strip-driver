@@ -30,7 +30,7 @@
 #define LPD8806_COLOR_CHANNEL_COUNT 3
 #define LPD8806_COLOR_VALUE_MAX 127
 
-class LedStripAdapterLPD8806 : public BaseLedStripAdapter {
+class LedStripAdapterLPD8806 : public LedStripAdapterBase {
 private:
     /**
      * LPD8806 strip instance.

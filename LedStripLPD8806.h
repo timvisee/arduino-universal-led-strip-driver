@@ -37,7 +37,7 @@
  * @website http://timvisee.com/
  * @version 1.1
  */
-class LedStripLPD8806 : public BaseLedStrip {
+class LedStripLPD8806 : public LedStripBase {
 private:
     /**
      * Pin used for data transfer to the LED strip.
