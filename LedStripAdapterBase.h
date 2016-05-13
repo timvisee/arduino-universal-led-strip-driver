@@ -23,7 +23,7 @@
 #ifndef LEDSTRIPCONTROLLER_BASELEDSTRIPADAPTER_H
 #define LEDSTRIPCONTROLLER_BASELEDSTRIPADAPTER_H
 
-#include "LPD8806.h"
+#include "LedStripLPD8806Helper.h"
 #include "LedStripColor.h"
 
 class BaseLedStripAdapter {

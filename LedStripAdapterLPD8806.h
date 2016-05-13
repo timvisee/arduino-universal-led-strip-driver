@@ -23,7 +23,7 @@
 #ifndef LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H
 #define LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H
 
-#include "LPD8806.h"
+#include "LedStripLPD8806Helper.h"
 #include "LedStripColor.h"
 #include "LedStripAdapterBase.h"
 

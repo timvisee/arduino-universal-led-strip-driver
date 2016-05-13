@@ -74,7 +74,7 @@ a 'latch' anyway.
 
 
 #include "SPI.h"
-#include "LPD8806.h"
+#include "LedStripLPD8806Helper.h"
 
 /*****************************************************************************/
 
