@@ -91,29 +91,17 @@ void loop() {
 
 
     // Fade in
-    for(int i = 0; i < LED_STRIP_COLOR_VALUE_MAX; i++) {
-        // Set the color of each LED
-        strip.setRangeLedColors(20, 40, i, i, i);
-
-        // Render the LED strip
-        strip.render();
-    }
+    LedStripAnimator::fadeIn(&strip, LedStripColor(255, 127, 0));
     delay(500);
 
 
     // Fade out
-    for(int i = LED_STRIP_COLOR_VALUE_MAX - 1; i >= 0; i--) {
-        // Set the color of each LED
-        strip.setRangeLedColors(20, 40, i, i, i);
-
-        // Render the LED strip
-        strip.render();
-    }
+    LedStripAnimator::fadeOut(&strip, LedStripColor(255, 127, 0));
     delay(500);
 
 
     // Light up some random pixels a few times
-    for(int cycle = 0; cycle < 5; cycle++) {
+    for(int cycle = 0; cycle < 4; cycle++) {
         // Light up some random pixels
         for(int i = 0; i < 10; i++)
             strip.setLedColor(random(0, LED_STRIP_LED_COUNT), 0, 255, 255);
