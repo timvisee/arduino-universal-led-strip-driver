@@ -35,7 +35,7 @@ private:
     /**
      * LPD8806 strip instance.
      */
-    LPD8806 strip;
+    LPD8806* strip;
 
 public:
     /**
