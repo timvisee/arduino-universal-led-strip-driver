@@ -37,6 +37,39 @@
 class LedStripAnimator {
 public:
     /**
+     * Fade in.
+     *
+     * @param ledStrip Led strip instance pointer.
+     * @param color Color to fade.
+     */
+    static void fadeIn(LedStripBase* ledStrip, LedStripColor color);
+
+    /**
+     * Fade out.
+     *
+     * @param ledStrip Led strip instance pointer.
+     * @param color Color to fade.
+     */
+    static void fadeOut(LedStripBase* ledStrip, LedStripColor color);
+
+    /**
+     * Fade.
+     *
+     * @param ledStrip Led strip instance pointer.
+     * @param color Color to fade.
+     */
+    static void fade(LedStripBase* ledStrip, uint8_t from, uint8_t to, LedStripColor color);
+
+    /**
+     * Fade.
+     *
+     * @param ledStrip Led strip instance pointer.
+     * @param color Color to fade.
+     * @param wait Cycle delay in milliseconds.
+     */
+    static void fade(LedStripBase* ledStrip, uint8_t from, uint8_t to, LedStripColor color, unsigned long wait);
+
+    /**
      * Rainbow animation.
      *
      * @param ledStrip Led strip instance pointer.

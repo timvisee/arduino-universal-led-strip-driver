@@ -22,6 +22,45 @@
 
 #include "LedStripAnimator.h"
 
+void LedStripAnimator::fadeIn(LedStripBase *ledStrip, LedStripColor color) {
+    LedStripAnimator::fade(ledStrip, 0, 255, color);
+}
+
+void LedStripAnimator::fadeOut(LedStripBase *ledStrip, LedStripColor color) {
+    LedStripAnimator::fade(ledStrip, 255, 0, color);
+}
+
+void LedStripAnimator::fade(LedStripBase *ledStrip, uint8_t from, uint8_t to, LedStripColor color) {
+    LedStripAnimator::fade(ledStrip, from, to, color, 0);
+}
+
+void LedStripAnimator::fade(LedStripBase *ledStrip, uint8_t from, uint8_t to, LedStripColor color, unsigned long wait) {
+    // Define an index variable
+    uint8_t i = from;
+
+    // Loop through all
+    while(i != to) {
+        // Determine the fading factor
+        float factor = (float) i / 256.0f;
+
+        // Set the color of each LED
+        ledStrip->setAllLedColors(
+                (uint8_t) ((float) color.getRed() * factor),
+                (uint8_t) ((float) color.getGreen() * factor),
+                (uint8_t) ((float) color.getBlue() * factor)
+        );
+
+        // Render the LED strip
+        ledStrip->render();
+
+        // Wait for the given amount of time
+        delay(wait);
+
+        // Iterate to the next
+        i += from < to ? 1 : -1;
+    }
+}
+
 void LedStripAnimator::rainbow(LedStripBase *ledStrip) {
     LedStripAnimator::rainbow(ledStrip, 0);
 }
@@ -72,7 +111,7 @@ void LedStripAnimator::wipe(LedStripBase *ledStrip, LedStripColor color, unsigne
     // Loop through all LEDs
     for(uint16_t ledIndex = 0; ledIndex < ledStrip->getLedCount(); ledIndex++) {
         // Set the color of the current LED
-        ledStrip->tLedColoredIndex, color);
+        ledStrip->setLedColor(ledIndex, color);
 
         // Render the LED strip
         ledStrip->render();
