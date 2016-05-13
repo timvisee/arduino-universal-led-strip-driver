@@ -22,7 +22,10 @@
 
 #include <Arduino.h>
 
+// Include the LED strip driver headers
 #include "LedStripDriver.h"
+
+
 
 // We'll be using a LPD8806-based LED strip using the LED strip driver
 typedef LedStripLPD8806 LedStrip;
@@ -42,16 +45,21 @@ const uint8_t LED_STRIP_PIN_DATA = 2;
  */
 const uint8_t LED_STRIP_PIN_CLOCK = 3;
 
+
+
 /**
  * LED strip instance using LED strip driver.
+ * Use the configured LED count, data and clock pin constants.
  */
 LedStrip strip = LedStrip(LED_STRIP_LED_COUNT, LED_STRIP_PIN_DATA, LED_STRIP_PIN_CLOCK);
+
+
 
 /**
  * Called on start.
  */
 void setup() {
-    // Initialize the LED Strip
+    // Initialize the LED Strip, must be done once before using the LED strip
     strip.init(true);
 }
 
@@ -68,7 +76,7 @@ void loop() {
     // Flash three times
     for(int i = 0; i < 3; i++) {
         // Color the LED strip
-        strip.setRangeLedColors(0, 10, LedStripColor::red());
+        strip.setAllLedColors(LedStripColor::red());
         strip.render();
 
         // Wait a little
@@ -85,7 +93,7 @@ void loop() {
     // Fade in
     for(int i = 0; i < LED_STRIP_COLOR_VALUE_MAX; i++) {
         // Set the color of each LED
-        strip.setRangeLedColors(0, 10, i, i, i);
+        strip.setRangeLedColors(20, 40, i, i, i);
 
         // Render the LED strip
         strip.render();
@@ -96,7 +104,7 @@ void loop() {
     // Fade out
     for(int i = LED_STRIP_COLOR_VALUE_MAX - 1; i >= 0; i--) {
         // Set the color of each LED
-        strip.setRangeLedColors(0, 10, i, i, i);
+        strip.setRangeLedColors(20, 40, i, i, i);
 
         // Render the LED strip
         strip.render();
