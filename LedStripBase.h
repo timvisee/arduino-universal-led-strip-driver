@@ -23,6 +23,7 @@
 #ifndef LEDSTRIPDRIVER_LEDSTRIPBASE_H
 #define LEDSTRIPDRIVER_LEDSTRIPBASE_H
 
+#include "LedStripDriver.h"
 #include "LedStripAdapterBase.h"
 
 /**

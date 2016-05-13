@@ -23,7 +23,7 @@
 #ifndef LEDSTRIPDRIVER_BASELEDSTRIPADAPTER_H
 #define LEDSTRIPDRIVER_BASELEDSTRIPADAPTER_H
 
-#include "LedStripColor.h"
+#include "LedStripDriver.h"
 
 /**
  * LED strip adapter base class.

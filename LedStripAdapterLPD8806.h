@@ -23,8 +23,8 @@
 #ifndef LEDSTRIPDRIVER_LEDSTRIPADAPTERLPD8806_H
 #define LEDSTRIPDRIVER_LEDSTRIPADAPTERLPD8806_H
 
+#include "LedStripDriver.h"
 #include "LedStripLPD8806Helper.h"
-#include "LedStripColor.h"
 #include "LedStripAdapterBase.h"
 
 #define LPD8806_COLOR_CHANNEL_COUNT 3
