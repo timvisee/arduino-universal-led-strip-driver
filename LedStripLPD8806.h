@@ -26,7 +26,7 @@
 #include "LPD8806.h"
 #include "SPI.h"
 
-#include "BaseLedStrip.h"
+#include "LedStripBase.h"
 #include "LedStripAdapterLPD8806.h"
 
 /**s

@@ -20,7 +20,7 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#include "BaseLedStripAdapter.h"
+#include "LedStripAdapterBase.h"
 
 void BaseLedStripAdapter::setRangeLedColors(uint8_t fromLedIndex, uint8_t toLedIndex, LedStripColor color) {
     // Loop through the LED range to set the values

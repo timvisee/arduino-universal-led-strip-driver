@@ -20,7 +20,7 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#include "BaseLedStrip.h"
+#include "LedStripBase.h"
 
 BaseLedStrip::BaseLedStrip(uint8_t ledCount) {
     this->ledCount = ledCount;

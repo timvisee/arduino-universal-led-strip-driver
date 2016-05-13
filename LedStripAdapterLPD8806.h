@@ -25,7 +25,7 @@
 
 #include "LPD8806.h"
 #include "LedStripColor.h"
-#include "BaseLedStripAdapter.h"
+#include "LedStripAdapterBase.h"
 
 #define LPD8806_COLOR_CHANNEL_COUNT 3
 #define LPD8806_COLOR_VALUE_MAX 127

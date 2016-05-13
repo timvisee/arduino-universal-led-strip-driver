@@ -26,7 +26,7 @@
 #include "LPD8806.h"
 #include "SPI.h"
 
-#include "BaseLedStripAdapter.h"
+#include "LedStripAdapterBase.h"
 
 /**
  * LedStrip base class.
