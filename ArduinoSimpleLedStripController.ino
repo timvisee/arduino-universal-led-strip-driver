@@ -40,7 +40,7 @@ const uint8_t LED_STRIP_PIN_DATA = 2;
 const uint8_t LED_STRIP_PIN_CLOCK = 3;
 
 /**
- * LED strip instance.
+ * LED strip instance using LED strip driver.
  */
 LedStrip strip = LedStrip(LED_STRIP_LED_COUNT, LED_STRIP_PIN_DATA, LED_STRIP_PIN_CLOCK);
 
@@ -57,7 +57,7 @@ void setup() {
  */
 void loop() {
     // Set the color of the given LED
-    strip.setAllLedColors(LedStripColor(255, 255, 0));
+    strip.setRangeLedColors(0, 5, 255, 255, 0);
 
     // Render the LED strip
     strip.render();

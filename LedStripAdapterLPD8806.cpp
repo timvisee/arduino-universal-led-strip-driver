@@ -85,7 +85,7 @@ void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex, uint8_t redChannel, u
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex,
                                          uint8_t redChannel, uint8_t greenChannel, uint8_t blueChannel) {
-    this->strip.setPixelColor(ledIndex, redChannel, greenChannel, blueChannel);
+    this->strip.setPixelColor(ledIndex, redChannel / 2, greenChannel / 2, blueChannel / 2);
 }
 
 void LedStripAdapterLPD8806::setLedColor(uint8_t ledIndex,
