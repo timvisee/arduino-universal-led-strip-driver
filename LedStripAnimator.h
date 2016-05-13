@@ -31,17 +31,21 @@ class LedStripAnimator {
 public:
     /**
      * Rainbow animation.
+     *
+     * @param ledStrip Led strip instance pointer.
      */
     static void rainbow(LedStripBase* ledStrip);
 
     /**
      * Rainbow animation.
      *
+     * @param ledStrip Led strip instance pointer.
      * @param wait Number of milliseconds to wait between each rainbow cycle.
      */
     static void rainbow(LedStripBase* ledStrip, unsigned long wait);
 
     /**
+     * @param ledStrip Led strip instance pointer.
      * Rainbow animation that fits the whole LED strip.
      */
     static void rainbowFit(LedStripBase* ledStrip);
@@ -49,9 +53,19 @@ public:
     /**
      * Rainbow animation that fits the whole LED strip.
      *
+     * @param ledStrip Led strip instance pointer.
      * @param wait Number of milliseconds to wait between each rainbow cycle.
      */
     static void rainbowFit(LedStripBase* ledStrip, unsigned long wait);
+
+    /**
+     * Color wiping animation which fills the LED strip progressively.
+     *
+     * @param ledStrip Led strip instance pointer.
+     * @param color Color to fill up with.
+     * @param wait Number of milliseconds to wait between each cycle.
+     */
+    static void colorWipe(LedStripBase* ledStrip, LedStripColor color, unsigned long wait);
 };
 
 #endif // LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
