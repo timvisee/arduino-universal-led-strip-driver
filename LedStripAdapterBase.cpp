@@ -35,7 +35,7 @@ void BaseLedStripAdapter::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLe
 }
 
 void BaseLedStripAdapter::setRangeLedColors(uint16_t fromLedIndex, uint16_t toLedIndex, uint8_t redChannel,
-                                               uint16_t greenChannel) {
+                                               uint8_t greenChannel) {
     // Loop through the LED range to set the values
     for(uint16_t i = fromLedIndex; i < toLedIndex; i++)
         this->setLedColor(i, redChannel, greenChannel);
