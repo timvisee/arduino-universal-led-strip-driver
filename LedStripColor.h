@@ -26,6 +26,8 @@
 #include "Arduino.h"
 
 #define LED_STRIP_COLOR_VALUE_MAX 255
+#define LED_STRIP_COLOR_WHEEL_SMALL_SIZE 384
+#define LED_STRIP_COLOR_WHEEL_SIZE 765
 
 class LedStripColor {
 private:
@@ -99,8 +101,29 @@ public:
      * Constructor helper for combined color channels.
      *
      * @param combined Combined color channels.
+     *
+     * @return Color instance.
      */
     static LedStripColor fromCombinedChannels(uint32_t combined);
+
+    /**
+     * Constructor helper to create a color instance using a color wheel from the given value.
+     * This uses a small wheel.
+     *
+     * @param value Color wheel position. (0 to 384)
+     *
+     * @return Color instance.
+     */
+    static LedStripColor fromSmallWheel(uint16_t position);
+
+    /**
+     * Constructor helper to create a color instance using a color wheel from the given value.
+     *
+     * @param value Color wheel position. (0 to 765)
+     *
+     * @return Color instance.
+     */
+    static LedStripColor fromWheel(uint16_t position);
 
     /**
      * LED strip color instance representing black.

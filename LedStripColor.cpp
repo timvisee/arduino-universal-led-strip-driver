@@ -51,6 +51,43 @@ LedStripColor LedStripColor::fromCombinedChannels(uint32_t combined) {
     return color;
 }
 
+LedStripColor LedStripColor::fromSmallWheel(uint16_t position) {
+    return LedStripColor::fromWheel(position * 2);
+}
+
+LedStripColor LedStripColor::fromWheel(uint16_t position) {
+    // Define the color variables
+    uint8_t r, g, b;
+
+    // Determine the colors
+    switch(position / 256) {
+        default:
+        case 0:
+            // Red down, green up, blue off
+            r = 255 - position % 256;
+            g = position % 256;
+            b = 0;
+            break;
+
+        case 1:
+            // Green down, blue up, red off
+            g = 255 - position % 256;
+            b = position % 256;
+            r = 0;
+            break;
+
+        case 2:
+            // Blue down, red up, green off
+            b = 255 - position % 256;
+            r = position % 256;
+            g = 0;
+            break;
+    }
+
+    // Create and return the LED strip color instance
+    return LedStripColor(r, g, b);
+}
+
 LedStripColor LedStripColor::black() {
     return LedStripColor(0, 0, 0);
 }
