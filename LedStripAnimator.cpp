@@ -33,11 +33,11 @@ void LedStripAnimator::rainbow(LedStripBase *ledStrip, unsigned long wait) {
     // Loop through all the rainbow iterations
     for(iteration = 0; iteration < LED_STRIP_COLOR_WHEEL_SIZE; iteration += 2) {
         // Color all the LEDs
-        for(ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++)
-            (*ledStrip).setLedColor(ledIndex, LedStripColor::fromWheel(ledIndex + iteration));
+        for(ledIndex = 0; ledIndex < ledStrip->getLedCount(); ledIndex++)
+            ledStrip->setLedColor(ledIndex, LedStripColor::fromWheel(ledIndex + iteration));
 
         // Render the LED strip
-        (*ledStrip).render();
+        ledStrip->render();
 
         // Wait for the given amount of time
         delay(wait);
@@ -55,13 +55,13 @@ void LedStripAnimator::rainbowFit(LedStripBase *ledStrip, unsigned long wait) {
     // Loop through all the rainbow iterations
     for(iteration = 0; iteration < LED_STRIP_COLOR_WHEEL_SIZE; iteration += 2) {
         // Color all the LEDs
-        for(ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++)
-            (*ledStrip).setLedColor(ledIndex, LedStripColor::fromWheel(
-                    (ledIndex * LED_STRIP_COLOR_WHEEL_SIZE / (*ledStrip).getLedCount()) + iteration
+        for(ledIndex = 0; ledIndex < ledStrip->getLedCount(); ledIndex++)
+            ledStrip->setLedColor(ledIndex, LedStripColor::fromWheel(
+                    (ledIndex * LED_STRIP_COLOR_WHEEL_SIZE / ledStrip->getLedCount()) + iteration
             ));
 
         // Render the LED strip
-        (*ledStrip).render();
+        ledStrip->render();
 
         // Wait for the given amount of time
         delay(wait);
@@ -70,12 +70,12 @@ void LedStripAnimator::rainbowFit(LedStripBase *ledStrip, unsigned long wait) {
 
 void LedStripAnimator::wipe(LedStripBase *ledStrip, LedStripColor color, unsigned long wait) {
     // Loop through all LEDs
-    for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++) {
+    for(uint16_t ledIndex = 0; ledIndex < ledStrip->getLedCount(); ledIndex++) {
         // Set the color of the current LED
-        (*ledStrip).setLedColor(ledIndex, color);
+        ledStrip->tLedColoredIndex, color);
 
         // Render the LED strip
-        (*ledStrip).render();
+        ledStrip->render();
 
         // Wait for the given amount of time
         delay(wait);
@@ -84,25 +84,25 @@ void LedStripAnimator::wipe(LedStripBase *ledStrip, LedStripColor color, unsigne
 
 void LedStripAnimator::chase(LedStripBase *ledStrip, LedStripColor color, unsigned long wait) {
     // Clear the LED strip
-    (*ledStrip).clear(false);
+    ledStrip->clear(false);
 
     // Loop through all LEDs one by one
-    for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++) {
+    for(uint16_t ledIndex = 0; ledIndex < ledStrip->getLedCount(); ledIndex++) {
         // Set the color of the current LED
-        (*ledStrip).setLedColor(ledIndex, color);
+        ledStrip->setLedColor(ledIndex, color);
 
         // Render the LED strip
-        (*ledStrip).render();
+        ledStrip->render();
 
         // Clear the pixel, but don't refresh to keep it on until the next iteration
-        (*ledStrip).setLedColor(ledIndex, LedStripColor::black());
+        ledStrip->setLedColor(ledIndex, LedStripColor::black());
 
         // Wait for the given amount of time
         delay(wait);
     }
 
     // Render once more to turn off the last pixel
-    (*ledStrip).render();
+    ledStrip->render();
 }
 
 void LedStripAnimator::theaterChase(LedStripBase *ledStrip, LedStripColor color, uint16_t cycles, unsigned long wait) {
@@ -110,23 +110,23 @@ void LedStripAnimator::theaterChase(LedStripBase *ledStrip, LedStripColor color,
     for(int cycle = 0; cycle < cycles; cycle++) {
         for(uint16_t subLedIndex = 0; subLedIndex < 3; subLedIndex++) {
             // Turn every third LED on
-            for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex=ledIndex + 3)
-                (*ledStrip).setLedColor(ledIndex + subLedIndex, color);
+            for(uint16_t ledIndex = 0; ledIndex < ledStrip->getLedCount(); ledIndex=ledIndex + 3)
+                ledStrip->setLedColor(ledIndex + subLedIndex, color);
 
             // Render the LED strip
-            (*ledStrip).render();
+            ledStrip->render();
 
             // Wait for the given amount of time
             delay(wait);
 
             // Turn the LEDs off again
-            for(int i = 0; i < (*ledStrip).getLedCount(); i = i + 3)
-                (*ledStrip).setLedColor(i + subLedIndex, LedStripColor::black());
+            for(int i = 0; i < ledStrip->getLedCount(); i = i + 3)
+                ledStrip->setLedColor(i + subLedIndex, LedStripColor::black());
         }
     }
 
     // Render once more to turn off the last pixels
-    (*ledStrip).render();
+    ledStrip->render();
 }
 
 void LedStripAnimator::theaterChaseRainbow(LedStripBase *ledStrip, unsigned long wait) {
@@ -138,23 +138,23 @@ void LedStripAnimator::theaterChaseRainbow(LedStripBase *ledStrip, uint16_t cycl
     for(int cycle = 0; cycle < cycles; cycle++) {
         for(uint16_t subLedIndex = 0; subLedIndex < 3; subLedIndex++) {
             // Turn every third LED on
-            for(uint16_t ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex=ledIndex + 3)
-                (*ledStrip).setLedColor(ledIndex + subLedIndex,
+            for(uint16_t ledIndex = 0; ledIndex < ledStrip->getLedCount(); ledIndex=ledIndex + 3)
+                ledStrip->setLedColor(ledIndex + subLedIndex,
                                         LedStripColor::fromSmallWheel((ledIndex + cycle) % LED_STRIP_COLOR_WHEEL_SMALL_SIZE)
                 );
 
             // Render the LED strip
-            (*ledStrip).render();
+            ledStrip->render();
 
             // Wait for the given amount of time
             delay(wait);
 
             // Turn the LEDs off again
-            for(uint16_t i = 0; i < (*ledStrip).getLedCount(); i = i + 3)
-                (*ledStrip).setLedColor(i + subLedIndex, LedStripColor::black());
+            for(uint16_t i = 0; i < ledStrip->getLedCount(); i = i + 3)
+                ledStrip->setLedColor(i + subLedIndex, LedStripColor::black());
         }
     }
 
     // Render once more to turn off the last pixels
-    (*ledStrip).render();
+    ledStrip->render();
 }

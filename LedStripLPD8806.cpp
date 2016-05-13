@@ -42,13 +42,13 @@ uint8_t LedStripLPD8806::getClockPin() {
 }
 
 void LedStripLPD8806::init() {
-    (*this->getAdapter()).init();
+    this->getAdapter()->init();
 }
 
 void LedStripLPD8806::init(bool render) {
-    (*this->getAdapter()).init(render);
+    this->getAdapter()->init(render);
 }
 
 void LedStripLPD8806::render() {
-    (*this->getAdapter()).render();
+    this->getAdapter()->render();
 }
