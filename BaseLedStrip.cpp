@@ -32,9 +32,8 @@ BaseLedStrip::BaseLedStrip(uint8_t ledCount, BaseLedStripAdapter* adapter) {
 }
 
 BaseLedStrip::~BaseLedStrip() {
-    // Explicitly delete all fields
-//    delete &this->ledCount;
-//    delete &this->adapter;
+    // Explicitly delete dynamically allocated LED strip adapter
+    delete &this->adapter;
 }
 
 uint8_t BaseLedStrip::getLedCount() {

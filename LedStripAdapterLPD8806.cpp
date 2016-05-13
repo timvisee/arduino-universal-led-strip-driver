@@ -27,10 +27,7 @@ LedStripAdapterLPD8806::LedStripAdapterLPD8806(uint8_t ledCount, uint8_t pinData
     strip = LPD8806(ledCount, pinData, pinClock);
 }
 
-LedStripAdapterLPD8806::~LedStripAdapterLPD8806() {
-    // Explicitly delete the strip field
-//    delete &this->strip;
-}
+LedStripAdapterLPD8806::~LedStripAdapterLPD8806() { }
 
 void LedStripAdapterLPD8806::init() {
     // Initialize/begin the LED strip

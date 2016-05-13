@@ -38,13 +38,7 @@ LedStripColor::LedStripColor(uint8_t redChannel, uint8_t greenChannel, uint8_t b
     this->alphaChannel = alphaChannel;
 }
 
-LedStripColor::~LedStripColor() {
-    // Explicitly delete all fields
-//    delete &this->redChannel;
-//    delete &this->greenChannel;
-//    delete &this->blueChannel;
-//    delete &this->alphaChannel;
-}
+LedStripColor::~LedStripColor() { }
 
 LedStripColor LedStripColor::fromCombinedChannels(uint32_t combined) {
     // Construct a LedStripColor object
