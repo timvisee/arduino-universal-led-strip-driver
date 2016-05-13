@@ -23,6 +23,7 @@
 #ifndef LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
 #define LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
 
+// Include all required LED strip controller libraries
 #include "LedStrip.h"
 #include "LedStripColor.h"
 
