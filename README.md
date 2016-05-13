@@ -24,4 +24,29 @@ You need to instantiate every LED strip instance before using it, simply call th
 The LED strip is initialized. It's now ready to be used. Remember that methods like `strip.setAllLedColors()` change the LED state on your Arduino.
 The `strip.render()` methods needs to be called to render the LED strip state to the physical device.
 
+
+### Minimal example
+    #include "LedStripDriver.h"
+    
+    // Create an alias for ease of use
+    typedef LedStripAdapterLPD8806 LedStrip;
+    
+    /**
+     * Called on Arduino setup.
+     */
+    void setup() {
+        // Define the LED strip
+        // (62 LEDs, data pin = 2, clock pin = 3)
+        LedStrip strip = LedStrip(62, 2, 3);
+    
+        // Initialize the LED strip before using it
+        strip.init();
+    
+        // Make the second LED red
+        strip.setLedColor(1, LedStripColor(255, 0, 0));
+    
+        // Render the LED strip
+        strip.render();
+    }
+
 Please check the `ArduinoUniversalLedStripDriver.ino` file as usage example.
