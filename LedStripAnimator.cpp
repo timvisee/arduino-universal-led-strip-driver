@@ -34,7 +34,7 @@ void LedStripAnimator::rainbow(LedStripBase *ledStrip, unsigned long wait) {
     for(iteration = 0; iteration < LED_STRIP_COLOR_WHEEL_SIZE; iteration += 2) {
         // Color all the LEDs
         for(ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++)
-            (*ledStrip).setLedColor(ledIndex, LedStripColor::fromWheel((ledIndex + iteration)));
+            (*ledStrip).setLedColor(ledIndex, LedStripColor::fromWheel(ledIndex + iteration));
 
         // Render the LED strip
         (*ledStrip).render();

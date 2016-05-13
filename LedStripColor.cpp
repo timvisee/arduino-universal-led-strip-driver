@@ -57,31 +57,26 @@ LedStripColor LedStripColor::fromSmallWheel(uint16_t position) {
 
 LedStripColor LedStripColor::fromWheel(uint16_t position) {
     // Define the color variables
-    uint8_t r, g, b;
+    uint8_t r = 0, g = 0, b = 0;
+
+    // Cap the position
+    position %= LED_STRIP_COLOR_WHEEL_SIZE;
 
     // Determine the colors
-    switch((position % 256) / 256) {
-        default:
-        case 0:
-            // Red down, green up, blue off
-            r = 255 - position % 256;
-            g = position % 256;
-            b = 0;
-            break;
+    if(position >= 0 && position < LED_STRIP_COLOR_VALUE_SIZE) {
+        // Red down, green up
+        r = LED_STRIP_COLOR_VALUE_MAX - position % LED_STRIP_COLOR_VALUE_SIZE;
+        g = position % LED_STRIP_COLOR_VALUE_SIZE;
 
-        case 1:
-            // Green down, blue up, red off
-            g = 255 - position % 256;
-            b = position % 256;
-            r = 0;
-            break;
+    } else if(position >= LED_STRIP_COLOR_VALUE_SIZE && position < LED_STRIP_COLOR_VALUE_SIZE * 2) {
+        // Green down, blue up
+        g = LED_STRIP_COLOR_VALUE_MAX - position % LED_STRIP_COLOR_VALUE_SIZE;
+        b = position % LED_STRIP_COLOR_VALUE_SIZE;
 
-        case 2:
-            // Blue down, red up, green off
-            b = 255 - position % 256;
-            r = position % 256;
-            g = 0;
-            break;
+    } else if(position >= LED_STRIP_COLOR_VALUE_SIZE * 2 && position < LED_STRIP_COLOR_VALUE_SIZE * 3) {
+        // Blue down, red up
+        b = LED_STRIP_COLOR_VALUE_MAX - position % LED_STRIP_COLOR_VALUE_SIZE;
+        r = position % LED_STRIP_COLOR_VALUE_SIZE;
     }
 
     // Create and return the LED strip color instance
