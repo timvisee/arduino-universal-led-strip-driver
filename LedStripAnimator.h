@@ -65,7 +65,7 @@ public:
      * @param color Color to fill up with.
      * @param wait Number of milliseconds to wait between each cycle.
      */
-    static void colorWipe(LedStripBase* ledStrip, LedStripColor color, unsigned long wait);
+    static void wipe(LedStripBase *ledStrip, LedStripColor color, unsigned long wait);
 
     /**
      * Color chasing animation which chases one dot down the LED strip.
@@ -74,7 +74,7 @@ public:
      * @param color Color to fill up with.
      * @param wait Number of milliseconds to wait between each cycle.
      */
-    static void colorChase(LedStripBase* ledStrip, LedStripColor color, unsigned long wait);
+    static void chase(LedStripBase *ledStrip, LedStripColor color, unsigned long wait);
 
     /**
      * Theater styled chasing animation which chases one dot down the LED strip.
