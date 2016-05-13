@@ -44,3 +44,27 @@ void LedStripAnimator::rainbow(LedStripBase *ledStrip, unsigned long wait) {
     }
 }
 
+void LedStripAnimator::rainbowFit(LedStripBase *ledStrip) {
+    LedStripAnimator::rainbowFit(ledStrip, 0);
+}
+
+void LedStripAnimator::rainbowFit(LedStripBase *ledStrip, unsigned long wait) {
+    // Define the for-loop index variables
+    uint16_t ledIndex, iteration;
+
+    // Loop through all the rainbow iterations
+    for(iteration = 0; iteration < LED_STRIP_COLOR_WHEEL_SIZE; iteration += 2) {
+        // Color all the LEDs
+        for(ledIndex = 0; ledIndex < (*ledStrip).getLedCount(); ledIndex++)
+            (*ledStrip).setLedColor(ledIndex, LedStripColor::fromWheel(
+                    (ledIndex * LED_STRIP_COLOR_WHEEL_SIZE / (*ledStrip).getLedCount()) + iteration
+            ));
+
+        // Render the LED strip
+        (*ledStrip).render();
+
+        // Wait for the given amount of time
+        delay(wait);
+    }
+}
+

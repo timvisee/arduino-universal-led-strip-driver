@@ -40,6 +40,18 @@ public:
      * @param wait Number of milliseconds to wait between each rainbow cycle.
      */
     static void rainbow(LedStripBase* ledStrip, unsigned long wait);
+
+    /**
+     * Rainbow animation that fits the whole LED strip.
+     */
+    static void rainbowFit(LedStripBase* ledStrip);
+
+    /**
+     * Rainbow animation that fits the whole LED strip.
+     *
+     * @param wait Number of milliseconds to wait between each rainbow cycle.
+     */
+    static void rainbowFit(LedStripBase* ledStrip, unsigned long wait);
 };
 
 #endif // LEDSTRIPDRIVER_LEDSTRIPANIMATOR_H
