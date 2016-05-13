@@ -68,7 +68,7 @@ void loop() {
     // Flash three times
     for(int i = 0; i < 3; i++) {
         // Color the LED strip
-        strip.setRangeLedColors(0, 10, 255, 0, 0);
+        strip.setRangeLedColors(0, 10, LedStripColor::red());
         strip.render();
 
         // Wait a little
