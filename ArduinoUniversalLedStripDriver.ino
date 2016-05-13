@@ -82,7 +82,6 @@ void loop() {
     }
 
 
-
     // Fade in
     for(int i = 0; i < LED_STRIP_COLOR_VALUE_MAX; i++) {
         // Set the color of each LED
@@ -94,7 +93,6 @@ void loop() {
     delay(500);
 
 
-
     // Fade out
     for(int i = LED_STRIP_COLOR_VALUE_MAX - 1; i >= 0; i--) {
         // Set the color of each LED
@@ -104,7 +102,6 @@ void loop() {
         strip.render();
     }
     delay(500);
-
 
 
     // Light up some random pixels a few times
@@ -128,6 +125,7 @@ void loop() {
 
 
 
+
     /*
      * The LED strip driver provides an animator class.
      * This animator allows you to show various animations with a single line of code.
@@ -141,17 +139,14 @@ void loop() {
     delay(500);
 
 
-
     // Whipe animation
     LedStripAnimator::wipe(&strip, LedStripColor(255, 127, 0), 5);
     delay(500);
 
 
-
     // Rainbow animation
     LedStripAnimator::rainbow(&strip, 5);
     delay(500);
-
 
 
     // Fitted rainbow animation
