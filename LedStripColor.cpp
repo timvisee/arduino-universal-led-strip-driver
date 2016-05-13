@@ -60,7 +60,7 @@ LedStripColor LedStripColor::fromWheel(uint16_t position) {
     uint8_t r, g, b;
 
     // Determine the colors
-    switch(position / 256) {
+    switch((position % 256) / 256) {
         default:
         case 0:
             // Red down, green up, blue off
