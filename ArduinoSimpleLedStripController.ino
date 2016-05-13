@@ -57,7 +57,7 @@ void setup() {
  */
 void loop() {
     // Set the color of the given LED
-    strip.setLedColor(1, LedStripColor(255, 255, 0));
+    strip.setAllLedColors(LedStripColor(255, 255, 0));
 
     // Render the LED strip
     strip.render();
