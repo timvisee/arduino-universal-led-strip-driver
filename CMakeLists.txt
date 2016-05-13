@@ -1,5 +1,5 @@
 ##############################################################################
-# Copyright (c) ArduinoSimpleLedStripController 2016. All rights reserved.   #
+# Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           #
 #                                                                            #
 # @author Tim Visee                                                          #
 # @website http://timvisee.com/                                              #
@@ -38,7 +38,7 @@
 cmake_minimum_required(VERSION 2.8.4)
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/ArduinoToolchain.cmake)
 # Project name
-set(PROJECT_NAME ArduinoSimpleLedStripController)
+set(PROJECT_NAME ArduinoUniversalLedStripDriver)
 project(${PROJECT_NAME})
 
 # Arduino board type
@@ -47,5 +47,5 @@ set(${CMAKE_PROJECT_NAME}_BOARD uno)
 set(${CMAKE_PROJECT_NAME}_PORT COM21)
 
 # File name of the main sketch file
-set(${CMAKE_PROJECT_NAME}_SKETCH ArduinoSimpleLedStripController.ino)
+set(${CMAKE_PROJECT_NAME}_SKETCH ArduinoUniversalLedStripDriver.ino)
 generate_arduino_firmware(${CMAKE_PROJECT_NAME})

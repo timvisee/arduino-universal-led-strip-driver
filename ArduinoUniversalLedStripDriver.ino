@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) LedStripController 2016. All rights reserved.                *
+ * Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           *
  *                                                                            *
  * @author Tim Visee                                                          *
  * @website http://timvisee.com/                                              *
@@ -20,11 +20,48 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#ifndef LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
-#define LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
+#include <Arduino.h>
 
-// Include all required LED strip controller libraries
-#include "LedStripLPD8806.h"
-#include "LedStripColor.h"
+#include "LedStripDriver.h"
 
-#endif // LEDSTRIPCONTROLLER_LEDSTRIPCONTROLLER_H
+// We'll be using a LPD8806-based LED strip using the LED strip driver
+typedef LedStripLPD8806 LedStrip;
+
+/**
+ * Number of LEDs on the LED strip.
+ */
+const uint8_t LED_STRIP_LED_COUNT = 62;
+
+/**
+ * Data pin used for the LED strip.
+ */
+const uint8_t LED_STRIP_PIN_DATA = 2;
+
+/**
+ * Clock pin used for the LED strip.
+ */
+const uint8_t LED_STRIP_PIN_CLOCK = 3;
+
+/**
+ * LED strip instance using LED strip driver.
+ */
+LedStrip strip = LedStrip(LED_STRIP_LED_COUNT, LED_STRIP_PIN_DATA, LED_STRIP_PIN_CLOCK);
+
+/**
+ * Called on start.
+ */
+void setup() {
+    // Initialize the LED Strip
+    strip.init(true);
+}
+
+/**
+ * Called once each loop/update.
+ */
+void loop() {
+    // Set the color of the given LED
+    strip.setRangeLedColors(0, 5, 255, 255, 0);
+
+    // Render the LED strip
+    strip.render();
+}

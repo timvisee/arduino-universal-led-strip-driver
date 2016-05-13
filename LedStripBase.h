@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) LedStripController 2016. All rights reserved.                *
+ * Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           *
  *                                                                            *
  * @author Tim Visee                                                          *
  * @website http://timvisee.com/                                              *
@@ -20,8 +20,8 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#ifndef LEDSTRIPCONTROLLER_LEDSTRIPBASE_H
-#define LEDSTRIPCONTROLLER_LEDSTRIPBASE_H
+#ifndef LEDSTRIPDRIVER_LEDSTRIPBASE_H
+#define LEDSTRIPDRIVER_LEDSTRIPBASE_H
 
 #include "LedStripAdapterBase.h"
 
@@ -262,4 +262,4 @@ public:
                                  uint8_t alphaChannel);
 };
 
-#endif // LEDSTRIPCONTROLLER_LEDSTRIPBASE_H
+#endif // LEDSTRIPDRIVER_LEDSTRIPBASE_H

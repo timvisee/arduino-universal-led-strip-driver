@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) LedStripController 2016. All rights reserved.                *
+ * Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           *
  *                                                                            *
  * @author Tim Visee                                                          *
  * @website http://timvisee.com/                                              *

@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) LedStripController 2016. All rights reserved.                *
+ * Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           *
  *                                                                            *
  * @author Tim Visee                                                          *
  * @website http://timvisee.com/                                              *
@@ -20,8 +20,8 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#ifndef LEDSTRIPCONTROLLER_BASELEDSTRIPADAPTER_H
-#define LEDSTRIPCONTROLLER_BASELEDSTRIPADAPTER_H
+#ifndef LEDSTRIPDRIVER_BASELEDSTRIPADAPTER_H
+#define LEDSTRIPDRIVER_BASELEDSTRIPADAPTER_H
 
 #include "LedStripColor.h"
 
@@ -285,4 +285,4 @@ public:
     bool hasAlphaChannelSupport();
 };
 
-#endif // LEDSTRIPCONTROLLER_BASELEDSTRIPADAPTER_H
+#endif // LEDSTRIPDRIVER_BASELEDSTRIPADAPTER_H

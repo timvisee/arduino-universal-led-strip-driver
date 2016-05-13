@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) LedStripController 2016. All rights reserved.                *
+ * Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           *
  *                                                                            *
  * @author Tim Visee                                                          *
  * @website http://timvisee.com/                                              *
@@ -20,8 +20,8 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#ifndef LEDSTRIPCONTROLLER_LEDSTRIPLPD8806_H
-#define LEDSTRIPCONTROLLER_LEDSTRIPLPD8806_H
+#ifndef LEDSTRIPDRIVER_LEDSTRIPLPD8806_H
+#define LEDSTRIPDRIVER_LEDSTRIPLPD8806_H
 
 #include "LedStripLPD8806Helper.h"
 #include "SPI.h"
@@ -91,4 +91,4 @@ public:
     void render();
 };
 
-#endif // LEDSTRIPCONTROLLER_LEDSTRIPLPD8806_H
+#endif // LEDSTRIPDRIVER_LEDSTRIPLPD8806_H

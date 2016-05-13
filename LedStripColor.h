@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) LedStripController 2016. All rights reserved.                *
+ * Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           *
  *                                                                            *
  * @author Tim Visee                                                          *
  * @website http://timvisee.com/                                              *
@@ -20,8 +20,8 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#ifndef LEDSTRIPCONTROLLER_LEDSTRIPCOLOR_H
-#define LEDSTRIPCONTROLLER_LEDSTRIPCOLOR_H
+#ifndef LEDSTRIPDRIVER_LEDSTRIPCOLOR_H
+#define LEDSTRIPDRIVER_LEDSTRIPCOLOR_H
 
 #include "Arduino.h"
 
@@ -173,4 +173,4 @@ public:
     uint32_t setCombinedChannels(uint32_t combined);
 };
 
-#endif // LEDSTRIPCONTROLLER_LEDSTRIPCOLOR_H
+#endif // LEDSTRIPDRIVER_LEDSTRIPCOLOR_H

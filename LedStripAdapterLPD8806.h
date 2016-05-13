@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) LedStripController 2016. All rights reserved.                *
+ * Copyright (c) UniversalLedStripDriver 2016. All rights reserved.           *
  *                                                                            *
  * @author Tim Visee                                                          *
  * @website http://timvisee.com/                                              *
@@ -20,8 +20,8 @@
  * program. If not, see <http://opensource.org/licenses/MIT/>.                *
  ******************************************************************************/
 
-#ifndef LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H
-#define LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H
+#ifndef LEDSTRIPDRIVER_LEDSTRIPADAPTERLPD8806_H
+#define LEDSTRIPDRIVER_LEDSTRIPADAPTERLPD8806_H
 
 #include "LedStripLPD8806Helper.h"
 #include "LedStripColor.h"
@@ -98,4 +98,4 @@ public:
     uint8_t getColorValueMax();
 };
 
-#endif // LEDSTRIPCONTROLLER_LEDSTRIPADAPTERLPD8806_H
+#endif // LEDSTRIPDRIVER_LEDSTRIPADAPTERLPD8806_H
