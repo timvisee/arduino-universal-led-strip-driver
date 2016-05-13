@@ -24,6 +24,9 @@
 
 #include "LedStripController.h"
 
+// We'll be using a LPD8806-based LED strip using the LED strip driver
+typedef LedStripLPD8806 LedStrip;
+
 /**
  * Number of LEDs on the LED strip.
  */
