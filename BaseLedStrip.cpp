@@ -41,6 +41,10 @@ uint8_t BaseLedStrip::getLedCount() {
     return this->ledCount;
 }
 
+void BaseLedStrip::setLedCount(uint8_t ledCount) {
+    return (*this->adapter).setLedCount(ledCount);
+}
+
 BaseLedStripAdapter* BaseLedStrip::getAdapter() {
     return this->adapter;
 }

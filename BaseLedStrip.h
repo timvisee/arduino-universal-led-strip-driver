@@ -90,6 +90,13 @@ public:
     uint8_t getLedCount();
 
     /**
+     * Set and update the number of LEDs this LED strip has.
+     *
+     * @param ledCount LED count.
+     */
+    void setLedCount(uint8_t ledCount);
+
+    /**
      * Get the LED strip adapter instance.
      *
      * @return LED strip adapter.

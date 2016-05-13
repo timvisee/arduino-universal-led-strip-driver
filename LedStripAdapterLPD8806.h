@@ -65,6 +65,9 @@ public:
     uint8_t getLedCount();
 
     // Override virtual method in BaseLedStripAdapter class
+    void setLedCount(uint8_t ledCount);
+
+    // Override virtual method in BaseLedStripAdapter class
     LedStripColor getLedColor(uint8_t ledIndex);
 
     // Override virtual method in BaseLedStripAdapter class

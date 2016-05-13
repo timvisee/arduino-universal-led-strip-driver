@@ -50,8 +50,15 @@ public:
 
     /**
      * Get the number of LEDs controlled by this LED strip adapter.
+     *
+     * @return LED count.
      */
     virtual uint8_t getLedCount() = 0;
+
+    /**
+     * Set and/or update the number of LEDs controlled by this LED strip adapter.
+     */
+    virtual void setLedCount(uint8_t ledCount) = 0;
 
     /**
      * Get the color of the given LED on the strip.
