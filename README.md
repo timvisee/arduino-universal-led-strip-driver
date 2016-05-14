@@ -4,6 +4,15 @@ This LED strip drivers supports various features like animations and strip state
 
 Please check the `ArduinoUniversalLedStripDriver.ino` file as usage example.
 
+### Supported LED strips
+The following LED strip types are currently supported:
+
+- **LPD8806** based LED strips
+
+You can easily add support for different LED strip types.
+To do this, create a new adapter and LED strip instance for your specific type.
+Check out the already existing adapters and LED strip instances for more information.
+
 ### Usage
 This driver allows you to use LED strips very easily. However, in order to use it, some steps are required.
 
