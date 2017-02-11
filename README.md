@@ -2,7 +2,7 @@
 An universal LED strip driver for Arduino.
 This LED strip drivers supports various features like animations and strip state buffering.
 
-Please check the `ArduinoUniversalLedStripDriver.ino` file as usage example.
+Please check the [ArduinoUniversalLedStripDriver.ino](ArduinoUniversalLedStripDriver.ino) file as usage example.
 
 ### Supported LED strips
 The following LED strip types are currently supported:
@@ -58,7 +58,7 @@ The `strip.render()` methods needs to be called to render the LED strip state to
         strip.render();
     }
 
-Please check the `ArduinoUniversalLedStripDriver.ino` file as usage example.
+Please check the [ArduinoUniversalLedStripDriver.ino](ArduinoUniversalLedStripDriver.ino) file as usage example.
 
 ## License
 This project is released under the GNU GPL-3.0 license. Check out the [LICENSE](LICENSE) file for more information.
