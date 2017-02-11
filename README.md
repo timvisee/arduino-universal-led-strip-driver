@@ -59,3 +59,6 @@ The `strip.render()` methods needs to be called to render the LED strip state to
     }
 
 Please check the `ArduinoUniversalLedStripDriver.ino` file as usage example.
+
+## License
+This project is released under the GNU GPL-3.0 license. Check out the [LICENSE](LICENSE) file for more information.
